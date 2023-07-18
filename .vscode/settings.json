@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true,
+    "vue.features.codeActions.enable": false
+}
