@@ -5,6 +5,7 @@
 let user = {
   name: "John",
   age: 30,
+  
 };
 
 // Haqiqiy dunyoda odamlar(foydalanuvchilar) harakat qilishi mumkin: savatdan biror narsani tanlash, tizimga kirish, chiqish va h.k

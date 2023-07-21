@@ -131,7 +131,7 @@ alert(BigUser().name) // Godzilla
 function SmallUser() {
   this.name = "Stephan"; // Manashu ob'ekt qaytadi.
 
-  return;
+  return ;
 }
 
 alert(new SmallUser().name); // Stephan

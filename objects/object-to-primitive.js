@@ -42,7 +42,7 @@
 
 // Biz maxsus ob'ekt usullaridan foydalangan holda satr va raqamli konvertatsiyani o'zimiz amalga oshirishimiz mumkin.
 
-// Endi texnik tafsilotlarga to‘xtalib o‘tamiz, chunki bu mavzuni chuqur yoritishning yagona     yo‘li.
+// Endi texnik tafsilotlarga to‘xtalib o‘tamiz, chunki bu mavzuni chuqur yoritishning yagona yo‘li.
 
 // Hints - Maslahatlar
 
@@ -84,7 +84,7 @@ if (user == 1) {
 
 // Amalda esa, narsalar biroz sodda.
 
-// Bitta holatdan tashqari barcha o'rnatilgan ob'ektlar ( Dateob'ekt, buni keyinroq bilib olamiz) "default"konversiyani xuddi shu tarzda amalga oshiradi "number". Va, ehtimol, biz ham xuddi shunday qilishimiz kerak.
+// Bitta holatdan tashqari barcha o'rnatilgan ob'ektlar ( Date ob'ekt, buni keyinroq bilib olamiz) "default"konversiyani xuddi shu tarzda amalga oshiradi "number". Va, ehtimol, biz ham xuddi shunday qilishimiz kerak.
 
 // Shunday bo'lsa-da, barcha 3 maslahat haqida bilish muhim, tez orada nima uchun ekanligini bilib olamiz.
 
@@ -133,7 +133,7 @@ let userObj = {
     money: 1000,
     [Symbol.toPrimitive](hint) {
         console.log("Hint: " + hint);
-        return hint == "string" ? { name: "${this.name}" } : this.money;
+        return hint == "string" ? { name: `${this.name}` } : this.money;
     },
 };
 
@@ -177,7 +177,8 @@ let myUser = {
     money: 1000,
 
     // for hint="string"
-    toString() {
+    toString(hint) {
+        console.log(hint);
         return `{name: "${this.name}"}`;
     },
 
