@@ -153,3 +153,37 @@ let id = Symbol("id");
 // console.log(c);
 // console.log(+c + 10)
 
+
+// let st = "My dog, another dog";
+
+// let tg = "dog";
+
+// let post = st.length;
+
+// while(true){
+//     let foundPos = st.lastIndexOf(tg, post);
+//     if(foundPos == -1) break;
+
+//     console.log(`FOunds at ${post}`);
+
+//     post = foundPos - 1
+// }
+
+
+// let str = "";
+
+// for (let i = 65; i < 220; i++) {
+//   str += String.fromCharCode(i);
+// }
+// console.log(str);
+
+function ucFirst(str){
+    // let stLetter = str.slice(0, 1).toUpperCase();
+    // str = stLetter + str.slice(1, str.length);
+    // return str
+
+    let stLetter = str.trim();
+    stLetter.slice(0, 1).toUpperCase();
+    // return str
+}
+ucFirst(" john")
