@@ -408,8 +408,13 @@ let str = "         Hello ".trim(); // Hello
 
 // Yozilgan stringni bosh harfini qaytaradigan funksiya yozing:
 
-// function ucFirst(str){
+// st way
 
-// }
+function ucFirst(str){
+  let sliced =  str.trim().slice(0, 1).toUpperCase();
+  str = str.trim().substring(1);
+  sliced += str
+  return sliced;
+}
+console.log(ucFirst(" Mezza"));
 
-// ucFirst("john") // == "John";

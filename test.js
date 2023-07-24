@@ -177,13 +177,30 @@ let id = Symbol("id");
 // }
 // console.log(str);
 
-function ucFirst(str){
-    // let stLetter = str.slice(0, 1).toUpperCase();
-    // str = stLetter + str.slice(1, str.length);
-    // return str
+// function ucFirst(str){
+//     let sliced =  str.trim().charAt(0).toUpperCase();
+//     str = str.trim().substring(1);
+//     sliced += str
+//     return sliced;
+//   }
+//   console.log(ucFirst(" Mezza"));
 
-    let stLetter = str.trim();
-    stLetter.slice(0, 1).toUpperCase();
-    // return str
-}
-ucFirst(" john")
+// nd way
+
+// function ucFirst(str) {
+//     if (!str) return str;
+  
+//     return str[0].toUpperCase() + str.slice(1);
+//   }
+  
+//   console.log( ucFirst("   john") ); // John
+
+// Check spam:
+
+// function checkSpam(str){
+
+// }
+
+// console.log(checkSpam('buy ViAgRA now'));
+// console.log(checkSpam('free xxxxx'));
+// console.log(checkSpam("innocent rabbit"));
