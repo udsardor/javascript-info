@@ -1,7 +1,7 @@
 // https://dmitripavlutin.com/how-to-compare-objects-in-javascript/
 // Object to primitive conversion - Ob'ektlarni primmitive larga o'girish.
 
-// Agar ob'ektlar qo'shilsa obj1 + obj2, yoki ayrilsa obj1 - obj2, yoki masalan alert ga chiqarilsa alert(obj) nima sodir bo'ladi.
+// Agar ob'ektlar qo'shilsa obj1 + obj2, yoki ayrilsa obj1 - obj2, yoki masalan console.log ga chiqarilsa console.log(obj) nima sodir bo'ladi.
 
 // JavaScript sizga operatorlarning obyektlarda qanday ishlashini sozlash imkonini bermaydi. Ruby yoki C++ kabi baʼzi boshqa dasturlash tillaridan farqli oʻlaroq, biz qoʻshish (yoki boshqa operatorlar) bilan ishlash uchun maxsus obʼyekt usulini amalga oshira olmaymiz.
 
@@ -38,7 +38,7 @@
 //     console.log(a);
 //     console.log(b);
 
-// alert(obj)String konvertatsiyasiga kelsak - bu odatda ob'ektni o'xshash kontekstda va o'xshash kontekstlarda chiqarganimizda sodir bo'ladi .
+// console.log(obj)String konvertatsiyasiga kelsak - bu odatda ob'ektni o'xshash kontekstda va o'xshash kontekstlarda chiqarganimizda sodir bo'ladi .
 
 // Biz maxsus ob'ekt usullaridan foydalangan holda satr va raqamli konvertatsiyani o'zimiz amalga oshirishimiz mumkin.
 
@@ -52,7 +52,7 @@
 
 // String convert bo'lishi: "string"
 
-alert(obj); // alertga hamma narsa string holatda chiqadi.
+console.log(obj); // console.logga hamma narsa string holatda chiqadi.
 
 anotherObj[obj]; // ob'ekt property'si sifatida ishlatganimizda.
 
@@ -162,11 +162,11 @@ console.log(userObj + 500); // hint: default -> 1500
 // demo:
 
 let anyUser = { name: "John" };
-alert(user); //"object object";
+console.log(user); //"object object";
 
-alert(user.valueOf() === user); // true
+console.log(user.valueOf() === user); // true
 
-// Shunday qilib, agar biz ob'ektni satr sifatida ishlatishga harakat qilsak, masalan, alertyoki shunga o'xshash, sukut bo'yicha biz ni ko'ramiz [object Object].
+// Shunday qilib, agar biz ob'ektni satr sifatida ishlatishga harakat qilsak, masalan, console.logyoki shunga o'xshash, sukut bo'yicha biz ni ko'ramiz [object Object].
 
 // Sukut bo'yicha valueOfbu erda faqat to'liqlik uchun, chalkashliklarga yo'l qo'ymaslik uchun eslatib o'tiladi. Ko'rib turganingizdek, u ob'ektning o'zini qaytaradi va shuning uchun e'tiborga olinmaydi. Sababini so‘ramang, bu tarixiy sabablarga ko‘ra. Shunday qilib, biz u mavjud emas deb taxmin qilishimiz mumkin.
 // Keling, konvertatsiyani sozlash uchun ushbu usullarni amalga oshiramiz.
@@ -189,9 +189,9 @@ let myUser = {
 
 };
 
-alert(myUser); // toString -> {name: "John"}
-alert(+myUser); // valueOf -> 1000
-alert(myUser + 500); // valueOf -> 1500
+console.log(myUser); // toString -> {name: "John"}
+console.log(+myUser); // valueOf -> 1000
+console.log(myUser + 500); // valueOf -> 1500
 
 // Ko'rib turganimizdek, xatti-harakatlar oldingi misol bilan bir xil Symbol.toPrimitive.
 
@@ -205,8 +205,8 @@ let userMy = {
     }
 };
 
-alert(userMy); // toString -> John
-alert(userMy + 500); // toString -> John500
+console.log(userMy); // toString -> John
+console.log(userMy + 500); // toString -> John500
 
 // Agar Symbol.toPrimitiveva bo'lmasa valueOf, toStringbarcha ibtidoiy konversiyalarni bajaradi.
 
@@ -240,7 +240,7 @@ let obj = {
     }
 };
 
-alert(obj * 2); // 4, object converted to primitive "2", then multiplication made it a number
+console.log(obj * 2); // 4, object converted to primitive "2", then multiplication made it a number
 
 // Ko'paytirish obj * 2birinchi navbatda ob'ektni ibtidoiyga aylantiradi (bu string "2").
 // Keyin "2" * 2bo'ladi 2 * 2(satr raqamga aylantiriladi).
@@ -254,7 +254,7 @@ let obj2 = {
     }
 };
 
-alert(obj + 2); // 22 ("2" + 2), conversion to primitive returned a string => concatenation
+console.log(obj + 2); // 22 ("2" + 2), conversion to primitive returned a string => concatenation
 
 
 // Xulosa
@@ -262,7 +262,7 @@ alert(obj + 2); // 22 ("2" + 2), conversion to primitive returned a string => co
 
 // Uning 3 turi (maslahatlari) mavjud:
 
-// "string"(uchun alertva qator kerak bo'lgan boshqa operatsiyalar)
+// "string"(uchun console.logva qator kerak bo'lgan boshqa operatsiyalar)
 // "number"(matematika uchun)
 // "default"(bir nechta operatorlar, odatda ob'ektlar uni xuddi shu tarzda amalga oshiradi "number")
 // Spetsifikatsiyada qaysi operator qaysi maslahatdan foydalanishi aniq tasvirlangan.

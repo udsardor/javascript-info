@@ -35,26 +35,26 @@ console.log(id == id2); // False
 // Shunday qilib, xulosa uchun, symbol bu primitive noyob qiymatdir va uning descriptioni ixtiyoriydir. Keling endi uni qayerda ishlatilishini ko'ramiz.
 
 // (⚠) Symvollar avtomatik tarzda stringlarga konvert bo'lmaydi.
-// Ko'pchilik Javascript qiymatlari string uchun avto konvertatsiyaga ega. Misol uchun biz deyarli hamma qiymatni alert ga chiqara olamiz va bu ishlaydi. Symvollar maxsusdir. Ular konvertatsiyaga duch kelmaydi.
+// Ko'pchilik Javascript qiymatlari string uchun avto konvertatsiyaga ega. Misol uchun biz deyarli hamma qiymatni console.log ga chiqara olamiz va bu ishlaydi. Symvollar maxsusdir. Ular konvertatsiyaga duch kelmaydi.
 
-// Misol uchun symbol alert ga chiqmaydi, va xatolik ko'rsatadi:
+// Misol uchun symbol console.log ga chiqmaydi, va xatolik ko'rsatadi:
 
 let IP = Symbol("id");
-alert(IP); // TypeError: Cannot convert a Symbol value to a string
+console.log(IP); // TypeError: Cannot convert a Symbol value to a string
 
-// (⚠) Eslatma. Alertga chiqarilgan harbir qiymat string data type ga o'giriladi.
+// (⚠) Eslatma. console.logga chiqarilgan harbir qiymat string data type ga o'giriladi.
 
 // Bu “language guard” ya'ni tilning chalkashligini oldini olish uchun, chunki symvollar va stringlar tubdan turli xil qiymatdirlar va ular "tasodifan" ham stringa o'girilib qolmaydi.
 
 // Agarda biz symbol malumot turini haqiqatda chiqarishni xoxlasak, biz .toString() methodidan foydalansak bo'ladi.
 
 let changedValue = Symbol("id");
-alert(changedValue.toString()); // Symbol(id), Va endi ishlaydi.
+console.log(changedValue.toString()); // Symbol(id), Va endi ishlaydi.
 
 // Yoki symbol descriptionini olmoqchi bo'lsak .description dan foydalanamiz.
 
 let needDescr = Symbol("My Description");
-alert(needDescr.description); // description bu property hisoblanadi va property'lar chaqirilmaydi bunga o'xshab .description() // error
+console.log(needDescr.description); // description bu property hisoblanadi va property'lar chaqirilmaydi bunga o'xshab .description() // error
 
 // Hidden Properties - Yashirin Xususiyatlar.
 
@@ -113,7 +113,7 @@ let user = {
 
 let clone = Object.assign({}, user);
 
-alert(clone[idNew]); // 123
+console.log(clone[idNew]); // 123
 
 // Bu erda hech qanday paradoks yo'q. Bu dizayn bo'yicha. G'oya shundan iboratki, biz ob'ektni klonlash yoki ob'ektlarni birlashtirganda, biz odatda barcha xususiyatlarning nusxalanishini xohlaymiz (shu jumladan kabi belgilar id).
 
@@ -135,7 +135,7 @@ let myId = Symbol.for("id"); // if the symbol did not exist, it is created
 let idAgain = Symbol.for("id");
 
 // the same symbol
-alert(myId === idAgain); // true
+console.log(myId === idAgain); // true
 
 // Agar bizga dasturimizda keng ko'lamli simvollar kerak bo'lsa ular aynan shuning uchun.
 
@@ -146,8 +146,8 @@ let sym = Symbol.for("name");
 let sym2 = Symbol.for("id");
 
 // get name by symbol
-alert( Symbol.keyFor(sym) ); // name
-alert( Symbol.keyFor(sym2) ); // id
+console.log( Symbol.keyFor(sym) ); // name
+console.log( Symbol.keyFor(sym2) ); // id
 
 // Symbol.keyForBelgining kalitini qidirish uchun ichki global belgilar registridan foydalanadi . Shunday qilib, u global bo'lmagan belgilar uchun ishlamaydi. Agar belgi global bo'lmasa, uni topa olmaydi va qaytaradi undefined.
 
@@ -158,10 +158,10 @@ alert( Symbol.keyFor(sym2) ); // id
 let globalSymbol = Symbol.for("name");
 let localSymbol = Symbol("name");
 
-alert( Symbol.keyFor(globalSymbol) ); // name, global symbol
-alert( Symbol.keyFor(localSymbol) ); // undefined, not global
+console.log( Symbol.keyFor(globalSymbol) ); // name, global symbol
+console.log( Symbol.keyFor(localSymbol) ); // undefined, not global
 
-alert( localSymbol.description ); // name
+console.log( localSymbol.description ); // name
 
 // System symbols
 

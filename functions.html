@@ -10,13 +10,13 @@
 		// Biz juda tez-tez javascriptda bitta harakat bajaruvchi kodni boshqa joyda ham takrorlashimiz mumkin
 		// Misol uchun ajoyib ko'rinayotgan habarni tashrif buyuruvchiga ko'rsatish, tizimdan chiqqanda yoki umuman yana boshqa joylarda
 		// Funksiyalar dasturning asosiy "qurilish bloklari" dir. Ular kodni takrorlamasdan ko'p marta chaqirish imkoniyatini beradi
-		// alert(message)Biz allaqachon , prompt(message, default)va kabi o'rnatilgan funksiyalarning misollarini ko'rganmiz confirm(question). Ammo biz o'zimizning funktsiyalarimizni ham yaratishimiz mumkin.
+		// console.log(message)Biz allaqachon , prompt(message, default)va kabi o'rnatilgan funksiyalarning misollarini ko'rganmiz confirm(question). Ammo biz o'zimizning funktsiyalarimizni ham yaratishimiz mumkin.
 
 		// Funksiya yaratish uchun biz function declaration dan foydalanishimiz mumkin
 
 		// Uning umumiy sintaksisi:
 		function showMessage() {
-		  alert( 'Hello everyone!' );
+		  console.log( 'Hello everyone!' );
 		}
 
 		// 1 - Function kalit so'zi yoziladi;
@@ -35,13 +35,13 @@
 
 		// misol uchun:
 		function showMessage() {
-		  alert( 'Hello everyone!' );
+		  console.log( 'Hello everyone!' );
 		}
 
 		showMessage();
 		showMessage(); 
 
-		// showMessage(); funksiyaning tanasidagi kodni ishlatadi va biz ikki marta alertni chiqganini ko'ramiz sababi biz funksiyani 2 marta e'lon qildik;
+		// showMessage(); funksiyaning tanasidagi kodni ishlatadi va biz ikki marta console.logni chiqganini ko'ramiz sababi biz funksiyani 2 marta e'lon qildik;
 		// Bu funksiyaning asosiy maqsadini ko'rsatib beradi ya'ni kodni takrorlamasdan ishlatish;
 		// Agar xabarni yoki kodni o'zgartirish kerak bo'lib qolsa biz uni bitta joydan o'zgartiramiz halos;
 
@@ -51,12 +51,12 @@
 		function showMessage() {
 		  let message = "Hello, I'm JavaScript!"; // local variable
 
-		  alert( message );
+		  console.log( message );
 		}
 
 		showMessage(); // Hello, I'm JavaScript!
 
-		alert( message ); // <-- Error! The variable is local to the function
+		console.log( message ); // <-- Error! The variable is local to the function
 
 		// Tashqi o'zgaruvchilar:
 		// Funksiya global tarzda e'lon qilingan o'zgaruvchilarga kirishga qodir va uni o'zgartirishimiz ham mumkin:
@@ -66,14 +66,14 @@
 		  userName = "Bob"; // (1) tashqaridagi o'zgaruvchi qiymati o'zgaradi
 
 		  let message = 'Hello, ' + userName;
-		  alert(message);
+		  console.log(message);
 		}
 
-		alert( userName ); // Funksiya e'lon qilinmasdan oldin "John" chiqadi
+		console.log( userName ); // Funksiya e'lon qilinmasdan oldin "John" chiqadi
 
 		showMessage();
 
-		alert( userName ); // Funksiya e'lon qilingandan keyin "Bob" chiqadi. Sababi funksiya ichida userName o'zgartirildi;
+		console.log( userName ); // Funksiya e'lon qilingandan keyin "Bob" chiqadi. Sababi funksiya ichida userName o'zgartirildi;
 
 
 		// Biz funksiyadan tashqarida e'lon qilingan o'zgaruvchi nomini funksiya ichida yan qayta ishlatsak bo'ladi:
@@ -84,13 +84,13 @@
 		  let userName = "Bob"; // Local o'zgaruvchi bo'lib e'lon qilinadi
 
 		  let message = 'Hello, ' + userName; // Bob
-		  alert(message);
+		  console.log(message);
 		}
 
 		// Funksiya o'zining o'zgaruvchisidan foydalanadi va e'lon qiladi
 		showMessage();
 
-		alert( userName ); // John, o'zgarmaydi, funksiya tashqi o'zgaruvchini o'zgartirishga qodir bo'lmaydi;
+		console.log( userName ); // John, o'zgarmaydi, funksiya tashqi o'zgaruvchini o'zgartirishga qodir bo'lmaydi;
 
 		// Agarda o'zgaruvchi funksiyadan tashqarida e'lon qilingan bo'lsa biz buni Global o'zgaruvchilar deb ataymiz
 		// Global o'zgaruvchilar hohlagan funksiya ichida ko'rinishi mumkin agarda u global o'zgaruvchi nomi bilan local da e'lon qilmagan bo'lsak
@@ -100,7 +100,7 @@
 		// Biz funksiyalarni parametr berib ham ishlatsak bo'ladi
 		// Aynan manabu misolda funksiyalarga parametr berib ishlatilingan
 		function showMessage(from, text) { // parameters: from, text
-		  alert(from + ': ' + text);
+		  console.log(from + ': ' + text);
 		}
 
 		showMessage('Ann', 'Hello!'); // Ann: Hello! (*)
@@ -114,7 +114,7 @@
 
 		  from = '*' + from + '*'; // make "from" look nicer
 
-		  alert( from + ': ' + text );
+		  console.log( from + ': ' + text );
 		}
 
 		let from = "Ann";
@@ -122,7 +122,7 @@
 		showMessage(from, "Hello"); // *Ann*: Hello
 
 		// the value of "from" is the same, the function modified a local copy
-		alert( from ); // Ann
+		console.log( from ); // Ann
 
 		// Funksiya ichidagi from bu shunchaki qiymatni nusxa oladi xolos biz uyerga xoxlagan turdagi nom bersak bo'ladi uni o'rniga faqatgina bitta qiymat kelib tushadi ya'ni 'Ann' so'zi ya'ni tashqaridagi global variable dagi qiymat kelib tushadi
 
@@ -140,7 +140,7 @@
 		// misol uchun: (parameter = "default text")
 
 		function showMessage(from, text = "no text given") {
-		  alert( from + ": " + text );
+		  console.log( from + ": " + text );
 		}
 
 		showMessage("Ann"); // Ann: no text given	
@@ -162,7 +162,7 @@
 		    text = 'no text given';
 		  }
 
-		  alert( from + ": " + text );
+		  console.log( from + ": " + text );
 		}
 
 		// Yoki || operatori yordamida tekshirishgan
@@ -183,7 +183,7 @@
 		    text = 'empty message';
 		  }
 
-		  alert(text);
+		  console.log(text);
 		}
 
 		showMessage(); // empty message
@@ -199,7 +199,7 @@
 		// va undefined qiymatini topishda shunda foydalanganimiz yaxshiroqdir:
 		function showCount(count) {
 		  // if count is undefined or null, show "unknown"
-		  alert(count ?? "unknown");
+		  console.log(count ?? "unknown");
 		}
 
 		showCount(0); // 0
@@ -214,7 +214,7 @@
 		}
 
 		let result = sum(1, 2);
-		alert( result ); // 3	
+		console.log( result ); // 3	
 		
 		// Direktiv return funksiyani istalga joyida yozilishi mumkin va kod oqilishi aynan return ga kelgan kod toxtaydi va bajariladi 
 		// Direktiv return shunchaki erkin yozilsa undan keyingi kodlar o'qilmaydi lekin quyidagi holatlarda mumkin:
@@ -231,9 +231,9 @@
 
 		if ( checkAge(age) ) {
 		// Agarda checkAge == true bo'lsa 'Acces granted yozuvi chiqadi'
-		  alert( 'Access granted' );
+		  console.log( 'Access granted' );
 		} else {
-		  alert( 'Access denied' );
+		  console.log( 'Access denied' );
 		}
 
 		// Return dan qiymatsiz holatda ham foydalanishimiz mumkin:
@@ -242,23 +242,23 @@
 		    return;
 		  }
 
-		  alert( "Showing you the movie" ); // (*)
+		  console.log( "Showing you the movie" ); // (*)
 		  // ...
 		}
-		// Agarda checkAge false qiymat qaytarsa u holatda show movie funksiyasi ishlamaydi agarda true qiymat qaytarsa alert elon qilinadi
+		// Agarda checkAge false qiymat qaytarsa u holatda show movie funksiyasi ishlamaydi agarda true qiymat qaytarsa console.log elon qilinadi
 
 		// Agarda funksiya ichiga hechqanday kod yozilmasa u holatda funksiya undefined qiymatini qaytaradi
 
 		function doNothing() { /* empty */ }
 
-		alert( doNothing() === undefined ); // true
+		console.log( doNothing() === undefined ); // true
 			// An empty return is also the same as return undefined:
 
 		function doNothing() {
 		  return;
 		}
 
-		alert( doNothing() === undefined ); // true
+		console.log( doNothing() === undefined ); // true
 
 		// Return bilan ishlayotgan bo'sh qatorlardan foydalanmang
 
@@ -305,7 +305,7 @@
 
 		// Ushbu qoidani buzishning bir nechta misollari:
 
-		// getAge– yoshi bilan ko'rsatsa yomon bo'lardi alert(faqat olish kerak).
+		// getAge– yoshi bilan ko'rsatsa yomon bo'lardi console.log(faqat olish kerak).
 		// createForm- agar u hujjatni o'zgartirsa, unga shakl qo'shsa yomon bo'ladi (faqat uni yaratish va qaytarish kerak).
 		// checkPermission- agar u xabarni ko'rsatsa yomon bo'lardi access granted/denied(faqat tekshirishni amalga oshirish va natijani qaytarish kerak).
 		// Ushbu misollar prefikslarning umumiy ma'nolarini nazarda tutadi. Siz va sizning jamoangiz boshqa ma'nolar bo'yicha kelisha olasiz, lekin odatda ular unchalik farq qilmaydi. Qanday bo'lmasin, siz prefiks nimani anglatishini, prefiksli funktsiya nimani amalga oshirishi va nima qila olmasligini aniq tushunishingiz kerak. Barcha bir xil prefiksli funktsiyalar qoidalarga bo'ysunishi kerak. Va jamoa bilimlarni baham ko'rishi kerak.

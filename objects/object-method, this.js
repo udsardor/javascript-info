@@ -221,8 +221,8 @@ console.log(madeUser.ref.name); // Natija nima?
 // };
 
 // calculator.read();
-// alert( calculator.sum() );
-// alert( calculator.mul() );
+// console.log( calculator.sum() );
+// console.log( calculator.mul() );
 
 
 // Chaining - Zanjirlash:

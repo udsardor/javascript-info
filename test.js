@@ -35,7 +35,7 @@
 
 // window.addEventListener("click", () => {
 //     // top.close();
-//     // top.alert("Good bye bitch!!!")
+//     // top.console.log("Good bye bitch!!!")
 //     document.designMode = "on"
 // })
 // for(let i = 0; i < )
@@ -54,8 +54,8 @@
 // };
 
 // calculator.read();
-// alert(calculator.sum());
-// alert(calculator.mul());
+// console.log(calculator.sum());
+// console.log(calculator.mul());
 
 // let ladder = {
 //     step: 0,
@@ -115,7 +115,7 @@
 //     };
 
 // console.log(a + b);
-// alert({}) // autoconvert
+// console.log({}) // autoconvert
 // console.log("apple" < "pineapple");
 let id = Symbol("id");
 

@@ -16,7 +16,7 @@
 let john = {
   name: "John",
   sayHi: function () {
-    alert("Hi buddy!");
+    console.log("Hi buddy!");
   },
 };
 
@@ -44,12 +44,12 @@ john.sayHi(); // Hi buddy!
 
 let str = "Hello";
 
-alert(str.toUpperCase()); // HELLO
+console.log(str.toUpperCase()); // HELLO
 
 // Oddiy, to'g'rimi? Mana aslida nima sodir bo'ladi str.toUpperCase():
 
 // 1 Satr strprimitivdir. Shunday qilib, uning xususiyatiga kirish paytida, satrning qiymatini biladigan va kabi foydali usullarga ega bo'lgan maxsus ob'ekt yaratiladi toUpperCase().
-// 2 Bu usul ishlaydi va yangi satrni qaytaradi (ko'rsatilgan alert).
+// 2 Bu usul ishlaydi va yangi satrni qaytaradi (ko'rsatilgan console.log).
 // 3 Maxsus ob'ekt yo'q qilinadi, ibtidoiy str yolg'iz qoladi.
 
 // Shunday qilib, ibtidoiy usullarni taqdim etishi mumkin, ammo ular hali ham engil bo'lib qoladi.
@@ -60,7 +60,7 @@ alert(str.toUpperCase()); // HELLO
 
 let n = 1.23456;
 
-alert(n.toFixed(2)); // 1.23
+console.log(n.toFixed(2)); // 1.23
 
 // Biz aniqroq usullarni Raqamlar va satrlar bo'limlarida ko'rib chiqamiz .
 
@@ -72,14 +72,14 @@ alert(n.toFixed(2)); // 1.23
 
 // Misol uchun: 
 
-alert(typeof 0); // "number"
+console.log(typeof 0); // "number"
 
-alert(typeof new Number(0)); // "object"!
+console.log(typeof new Number(0)); // "object"!
 
 let zero = new Number(0);
 
 if (zero) { // zero is true, because it's an object
-  alert("zero is truthy!?!");
+  console.log("zero is truthy!?!");
 }
 
 // Lekin new operatorini olib biz String , Number, Boolean qilib ishlatadigan bo'lsak bu bizga juda foydali bo'ladi. Ular qiymatlarni convertatsiya qilishda yordam beradi.
@@ -90,7 +90,7 @@ let num = Number("123"); // convert a string to number
 // Null, undefined larda methodlar yo'q hisoblanadi.
 // Maxsus null va undefined bular istisnolardir. Ular o'rovvchi ob'ektga o'ralmaydi va methodi ham yo'qdir. Va ular ashaddiy primitivelardir.
 
-alert(null.test); // error
+console.log(null.test); // error
 
 // Xulosa:
 
@@ -102,6 +102,6 @@ let ptr = "Hello";
 
 ptr.test = 5;
 
-alert(ptr.test);
+console.log(ptr.test);
 
 

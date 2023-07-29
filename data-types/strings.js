@@ -22,7 +22,7 @@ function sum(a, b) {
   return a + b;
 }
 
-alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+console.log(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
 
 // Backticklardan foydalanishning yana bir afzalligi shundaki, ular qatorni bir nechta satrlarni qamrab olish imkonini beradi:
 
@@ -57,7 +57,7 @@ let str1 = "Hello\nWorld"; // two lines using a "newline symbol"
 let str2 = `Hello
 World`;
 
-alert(str1 == str2); // true
+console.log(str1 == str2); // true
 
 // Boshqa, kamroq tarqalgan maxsus belgilar mavjud:
 
@@ -67,17 +67,17 @@ alert(str1 == str2); // true
 
 // Bu juda o'ziga xos bo'lgani uchun, agar biz \satr ichida haqiqiy teskari chiziqni ko'rsatishimiz kerak bo'lsa, uni ikki barobarga oshirishimiz kerak:
 
-alert(`The backslash: \\`); // The backslash: \
+console.log(`The backslash: \\`); // The backslash: \
 
 // "Qochib ketgan" deb ataladigan qo'shtirnoq \', \", \`bir xil tirnoqli qatorga qo'shtirnoq qo'shish uchun ishlatiladi.
 
-alert("I'm the Walrus!"); // I'm the Walrus!
+console.log("I'm the Walrus!"); // I'm the Walrus!
 
 // Ko'rib turganingizdek, biz ichki tirnoqni teskari chiziq bilan oldinga qo'yishimiz kerak \', chunki aks holda u satr oxirini bildiradi.
 
 // Albatta, faqat qo'shimchalar bilan bir xil bo'lgan tirnoqlardan qochish kerak. Shunday qilib, yanada oqlangan yechim sifatida biz qo'sh tirnoq yoki orqaga o'tishimiz mumkin:
 
-alert("I'm the Walrus!"); // I'm the Walrus!
+console.log("I'm the Walrus!"); // I'm the Walrus!
 
 // Ushbu maxsus belgilardan tashqari, Unicode kodlari uchun maxsus belgi ham mavjud , u kamdan-kam qo'llaniladi va Unicode\u… haqidagi ixtiyoriy bo'limda yoritiladi .
 
@@ -117,7 +117,7 @@ console.log(myStr.at(-1)); // myStr.length == 5; myStr - 1 = 4
 let nthStr = `Hello`;
 
 console.log(nthStr[-2]); // undefined
-alert(nthStr.at(-2)); // l
+console.log(nthStr.at(-2)); // l
 
 // Biz harbitta belgi uchun iteration (iteratsiya) qilishimiz mumkin for..of ni ishlatgan holatda:
 
@@ -130,7 +130,7 @@ for (let characters of "Hello") {
 let str = 'Hi';
 
 str[0] = 'h'; // error
-alert(str[0]); // doesn't work
+console.log(str[0]); // doesn't work
 
 // Uni o'zgartirishni yo'li uni qiymatini qaytadan o'zgartirishdir.
 
@@ -138,7 +138,7 @@ let anotherStr = 'Hi';
 
 anotherStr = 'h' + anotherStr[1]; // replace the anotherString
 
-alert(anotherStr); // hi
+console.log(anotherStr); // hi
 
 // Keyingi bo'limlarda biz bunga ko'proq misollarni ko'ramiz.
 
@@ -146,12 +146,12 @@ alert(anotherStr); // hi
 
 // toUpperCase() va toLowerCase()
 
-alert('Interface'.toUpperCase()); // INTERFACE
-alert('Interface'.toLowerCase()); // interface
+console.log('Interface'.toUpperCase()); // INTERFACE
+console.log('Interface'.toLowerCase()); // interface
 
 
 // Yoki bitta belgini kichik harf bilan yozishni xohlasak:
-alert('Interface'[0].toLowerCase()); // 'i'
+console.log('Interface'[0].toLowerCase()); // 'i'
 
 // Searching for a substring - malum bir so'zni topish
 
@@ -186,7 +186,7 @@ while (true) {
 
   if (foundPos == -1) break;
 
-  alert(`Found at ${foundPos}`)
+  console.log(`Found at ${foundPos}`)
   pos = foundPos + 1
 }
 
@@ -227,18 +227,18 @@ if (myStr.indexOf("Widget") != -1) {
 
 // Agar biz haqiqatdanham bor yoki yo'qligini tekshirish uchun shuni ishlatganimiz maqulroq lekin index uchun emas.
 
-alert("Widget with id".includes("Widget")); // true
+console.log("Widget with id".includes("Widget")); // true
 
-alert("Hello".includes("Bye")); // false
+console.log("Hello".includes("Bye")); // false
 
 // Ixtiyoriy argument str.includes(target, position) shu pozitsiyadan boshlab qidirsh kerakligini aytadi.
-alert("Widget".includes("id")); // true
-alert("Widget".includes("id", 3)); // false, from position 3 there is no "id"
+console.log("Widget".includes("id")); // true
+console.log("Widget".includes("id", 3)); // false, from position 3 there is no "id"
 
 // Start with va endWith methodi:
 
-alert("Widget".startsWith("Wid")) // true, "Widget" Wid so'zi bilan boshlaydi.
-alert("Widget".endsWith("get")) // true, "Widget" get so'zi bilan tugaydi.
+console.log("Widget".startsWith("Wid")) // true, "Widget" Wid so'zi bilan boshlaydi.
+console.log("Widget".endsWith("get")) // true, "Widget" get so'zi bilan tugaydi.
 
 // Getting substring - Stringni olish:
 
@@ -251,8 +251,8 @@ alert("Widget".endsWith("get")) // true, "Widget" get so'zi bilan tugaydi.
 // Misol uchun:
 
 let str = "stringify";
-alert(str.slice(0, 5)); // 'strin', the substring from 0 to 5 (not including 5)
-alert(str.slice(0, 1)); // 's', from 0 to 1, but not including 1, so only character at 0
+console.log(str.slice(0, 5)); // 'strin', the substring from 0 to 5 (not including 5)
+console.log(str.slice(0, 1)); // 's', from 0 to 1, but not including 1, so only character at 0
 
 // Agarda str.slice(oneArgument) bitta argument berilsa shu arguentdan boshlab ohirigacha kesadi
 
@@ -261,7 +261,7 @@ alert(str.slice(0, 1)); // 's', from 0 to 1, but not including 1, so only charac
 let str = "stringify";
 
 // start at the 4th position from the right, end at the 1st from the right
-alert(str.slice(-4, -1)); // 'gif'
+console.log(str.slice(-4, -1)); // 'gif'
 
 // Str.substring(start, [, end])
 
@@ -272,12 +272,12 @@ alert(str.slice(-4, -1)); // 'gif'
 let str = "stringify";
 
 // these are same for substring
-alert(str.substring(2, 6)); // "ring"
-alert(str.substring(6, 2)); // "ring"
+console.log(str.substring(2, 6)); // "ring"
+console.log(str.substring(6, 2)); // "ring"
 
 // ...but not for slice:
-alert(str.slice(2, 6)); // "ring" (the same)
-alert(str.slice(6, 2)); // "" (an empty string)
+console.log(str.slice(2, 6)); // "ring" (the same)
+console.log(str.slice(6, 2)); // "" (an empty string)
 
 // Negative qiyatlar qo'llab quvvatlanmaydi. Ular 0 sifatida qaraladi.
 
@@ -288,12 +288,12 @@ alert(str.slice(6, 2)); // "" (an empty string)
 // Boshqa usullar bilan solishtiradigan bo'lsak, bu startdan boshlab end'gacha emas berilgan uzunlikgacha kesadi masalan 2 chi pozitsiyadan boshlab 4 ta kes degandek.
 
 let str = "stringify";
-alert(str.substr(2, 4)); // 'ring', from the 2nd position get 4 characters
+console.log(str.substr(2, 4)); // 'ring', from the 2nd position get 4 characters
 
 // Negative qiyatlarniyam qollab quvvatashi mummkin:
 
 let str = "stringify";
-alert(str.substr(-4, 2)); // 'gi', 4 dan boshlab 2 ta kesadi.
+console.log(str.substr(-4, 2)); // 'gi', 4 dan boshlab 2 ta kesadi.
 
 // Ushbu usul til spetsifikatsiyasining B ilovasida keltirilgan . Bu shuni anglatadiki, faqat brauzerda joylashgan Javascript dvigatellari uni qo'llab-quvvatlashi kerak va undan foydalanish tavsiya etilmaydi. Amalda, u hamma joyda qo'llab-quvvatlanadi.
 
@@ -317,11 +317,11 @@ alert(str.substr(-4, 2)); // 'gi', 4 dan boshlab 2 ta kesadi.
 
 // 1: Kichik harf har doim katta harfdan katta bo'ladi:
 
-alert('a' > 'Z'); // true
+console.log('a' > 'Z'); // true
 
 // Diakritik belgilarga ega harflar "tartibsiz":
 
-alert('Österreich' > 'Zealand'); // true
+console.log('Österreich' > 'Zealand'); // true
 
 // Agar biz ushbu mamlakat nomlarini tartiblasak, bu g'alati natijalarga olib kelishi mumkin. Odatda odamlar ro'yxatda Zealandkeyin kelishini kutishadi .Österreich
 
@@ -331,22 +331,22 @@ alert('Österreich' > 'Zealand'); // true
 
 // str.codePointAt(pos)
 
-alert("Z".codePointAt(0)); // 90
-alert("z".codePointAt(0)); // 122
-alert("z".codePointAt(0).toString(16)); // 7a (if we need a hexadecimal value)
+console.log("Z".codePointAt(0)); // 90
+console.log("z".codePointAt(0)); // 122
+console.log("z".codePointAt(0).toString(16)); // 7a (if we need a hexadecimal value)
 
 // String.fromCodePoint(code)
 
 // Raqamga ko'ra belgi yaratadicode:
-alert(String.fromCodePoint(90)); // Z
-alert(String.fromCodePoint(0x5a)); // Z (we can also use a hex value as an argument)
+console.log(String.fromCodePoint(90)); // Z
+console.log(String.fromCodePoint(0x5a)); // Z (we can also use a hex value as an argument)
 
 let str = "";
 
 for (let i = 65; i < 220; i++) {
   str += String.fromCharCode(i);
 }
-alert(str);
+console.log(str);
 
 // // Output:
 // ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
@@ -378,7 +378,7 @@ alert(str);
 
 // Misol uchun:
 
-alert('Österreich'.localeCompare('Zealand')); // -1
+console.log('Österreich'.localeCompare('Zealand')); // -1
 
 // Ushbu usulda hujjatlarda ko'rsatilgan ikkita qo'shimcha argument mavjud bo'lib , u tilni belgilashga imkon beradi (atrof muhitdan olingan, harflar tartibi tilga bog'liq bo'ladi) va katta-kichik harf sezgirligi kabi qo'shimcha qoidalarni o'rnatish yoki bir xil kabi ko'rib chiqilishi kerak va "a"hokazo "á".
 

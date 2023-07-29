@@ -26,7 +26,7 @@ let anotherBillion = 1_000_000_000;
 
 let billion2 = 1e9;  // 1 billion, literally: 1 and 9 zeroes
 
-alert(7.3e9);  // 7.3 billions (same as 7300000000 or 7_300_000_000);
+console.log(7.3e9);  // 7.3 billions (same as 7300000000 or 7_300_000_000);
 
 
 // Boshqacha qilib aytganda, e raqamni 1 berilgan nolga ko'paytiradi.
@@ -86,17 +86,17 @@ let mcs = 1e-6; // five zeroes to the left from 1
 
 let num = 1.23456;
 
-alert(Math.round(num * 100) / 100); // 1.23456 -> 123.456 -> 123 -> 1.23
+console.log(Math.round(num * 100) / 100); // 1.23456 -> 123.456 -> 123 -> 1.23
 
 // ToFixed(n) usuli raqamni n nuqtadan keyin raqamlarga yaxlitlaydi va natijaning satr tasvirini qaytaradi.
 
 let num1 = 12.34;
-alert(num1.toFixed(1)); // "12.3"
+console.log(num1.toFixed(1)); // "12.3"
 
 // Bu yuqoriga yoki pastga eng yaqin qiymatga yaxlitlanadi, shunga o'xshash Math.round:
 
 let num2 = 12.36;
-alert(num2.toFixed(1)); // "12.4"
+console.log(num2.toFixed(1)); // "12.4"
 
 // Esda tuting toFixed(n) ning qiymati stringdir. Agar o'nlik raqamdagi qism toFixed nikidan kichikroq bo'lsa unda oxiriga to'ldirish uchun 5 ta nol qo'shiladi.
 
@@ -111,19 +111,19 @@ console.log(num3.toFixed(5)); // "12.34000", added zeroes to make exactly 5 digi
 
 // Agar raqam juda katta bo'lsa, u 64 bitli xotirani to'ldirishi va maxsus raqamli qiymatga aylanishi mumkin Infinity:
 
-alert(1e500); // Infinity
+console.log(1e500); // Infinity
 
 // Bir oz kamroq ravshan bo'lishi mumkin, lekin tez-tez sodir bo'ladigan narsa aniqlikni yo'qotishdir.
 
 // Ushbu (noto'g'ri!) tenglik testini ko'rib chiqing:
 
-alert(0.1 + 0.2 == 0.3); // false
+console.log(0.1 + 0.2 == 0.3); // false
 
 // To'g'ri, agar 0.1va ning yig'indisi 0.2ekanligini tekshirsak 0.3, ni olamiz false.
 
 // G'alati! Agar bo'lmasa, bu nima 0.3?
 
-// alert( 0.1 + 0.2 ); // 0.30000000000000004
+// console.log( 0.1 + 0.2 ); // 0.30000000000000004
 
 // Voy! Tasavvur qiling-a, siz elektron xarid qilish sayti yaratyapsiz va tashrif buyuruvchi o'z savatiga tovarlarni $0.10qo'yadi . $0.20Buyurtmaning umumiy miqdori bo'ladi $0.30000000000000004. Bu har kimni hayratga solardi.
 
@@ -139,7 +139,7 @@ alert(0.1 + 0.2 == 0.3); // false
 
 // IEEE-754 raqamli formati buni imkon qadar yaqin raqamga yaxlitlash orqali hal qiladi. Ushbu yaxlitlash qoidalari odatda "kichik aniqlik yo'qolishi" ni ko'rishga imkon bermaydi, lekin u mavjud.
 
-alert(0.1.toFixed(20)); // 0.10000000000000000555
+console.log(0.1.toFixed(20)); // 0.10000000000000000555
 
 // Va ikkita raqamni jamlaganimizda, ularning "aniqlik yo'qotishlari" qo'shiladi.
 // Shuning uchun 0.1 + 0.2aniq emas 0.3.
@@ -152,17 +152,17 @@ alert(0.1.toFixed(20)); // 0.10000000000000000555
 // Muammoni hal qila olamizmi? Albatta, eng ishonchli usul bu toFixed(n) usuli yordamida natijani yaxlitlashdir :
 
 let sum = 0.1 + 0.2;
-alert(sum.toFixed(2)); // "0.30"
+console.log(sum.toFixed(2)); // "0.30"
 
 // toFixedIltimos, har doim satrni qaytarishini unutmang . Bu kasrdan keyin 2 ta raqamga ega bo'lishini ta'minlaydi. Agar bizda elektron xarid bo'lsa va ko'rsatish kerak bo'lsa, bu juda qulay $0.30. Boshqa hollarda, uni raqamga majburlash uchun unary plyusdan foydalanishimiz mumkin:
 
 let sum2 = 0.1 + 0.2;
-alert(+sum2.toFixed(2)); // 0.3
+console.log(+sum2.toFixed(2)); // 0.3
 
 // Shuningdek, biz raqamlarni vaqtincha 100 ga (yoki undan kattaroq raqamga) ko'paytirishimiz, ularni butun songa aylantirishimiz, hisob-kitoblarni bajarishimiz va keyin ularni qaytarishimiz mumkin. Keyin, biz butun sonlar bilan matematika ishlayotganimizda, xatolik biroz kamayadi, lekin biz uni bo'lishda ham olamiz:
 
-alert((0.1 * 10 + 0.2 * 10) / 10); // 0.3
-alert((0.28 * 100 + 0.14 * 100) / 100); // 0.4200000000000001
+console.log((0.1 * 10 + 0.2 * 10) / 10); // 0.3
+console.log((0.28 * 100 + 0.14 * 100) / 100); // 0.4200000000000001
 
 // Shunday qilib, ko'paytirish/bo'lish usuli xatoni kamaytiradi, lekin uni butunlay olib tashlamaydi.
 
@@ -177,17 +177,17 @@ alert((0.28 * 100 + 0.14 * 100) / 100); // 0.4200000000000001
 
 // isNaN(value)o'z argumentini raqamga o'zgartiradi va keyin uning mavjudligini tekshiradi NaN:
 
-alert(isNaN(NaN)); // true
-alert(isNaN("str")); // true
+console.log(isNaN(NaN)); // true
+console.log(isNaN("str")); // true
 
 // Ammo bu funktsiya bizga kerakmi? Biz shunchaki taqqoslashdan foydalana olmaymizmi === NaN? Afsuski yo'q. Qiymat NaNnoyobdir, chunki u hech narsaga teng emas, shu jumladan o'zi ham:
 
-alert(NaN === NaN); // false
+console.log(NaN === NaN); // false
 
 // parseInt and parseFloat
 // Nomer konvertatsiyasi yoki unary + aniq nomer qaytaradi agar aniq nomer bo'lmasa, bu muvafaqqiyatsiz bo'ladi
 
-alert(+"100px"); // NaN
+console.log(+"100px"); // NaN
 
 // Yagona istisno qatorning boshida yoki oxiridagi bo'shliqlardir, chunki ular e'tiborga olinmaydi.
 
@@ -195,16 +195,16 @@ alert(+"100px"); // NaN
 
 // Ular satrdan raqamni o'qiy olmaguncha "o'qiydilar". Xato bo'lsa, yig'ilgan raqam qaytariladi. Funktsiya parseIntbutun sonni qaytaradi, shu bilan birga parseFloatsuzuvchi nuqtali raqamni qaytaradi:
 
-alert(parseInt('100px')); // 100
-alert(parseFloat('12.5em')); // 12.5
+console.log(parseInt('100px')); // 100
+console.log(parseFloat('12.5em')); // 12.5
 
-alert(parseInt('12.3')); // 12, only the integer part is returned
-alert(parseFloat('12.3.4')); // 12.3, the second point stops the reading
+console.log(parseInt('12.3')); // 12, only the integer part is returned
+console.log(parseFloat('12.3.4')); // 12.3, the second point stops the reading
 
 
 // parseInt/parseFloat NaN Qaytgan holatlar mavjud. Bu raqamlarni o'qib bo'lmaganda sodir bo'ladi:
 
-alert(parseInt('a123')); // NaN, the first symbol stops the process
+console.log(parseInt('a123')); // NaN, the first symbol stops the process
 
 // Boshqa matematik funksiyalar: 
 // JavaScript o'rnatilgan Math ob'ektiga ega bo'lib, unda matematik funktsiyalar va konstantalarning kichik kutubxonasi mavjud.
@@ -214,19 +214,19 @@ alert(parseInt('a123')); // NaN, the first symbol stops the process
 
 // 0 dan 1 gacha bo'lgan tasodifiy sonni qaytaradi (1dan tashqari).
 
-alert(Math.random()); // 0.1234567894322
-alert(Math.random()); // 0.5435252343232
-alert(Math.random()); // ... (any random numbers)
+console.log(Math.random()); // 0.1234567894322
+console.log(Math.random()); // 0.5435252343232
+console.log(Math.random()); // ... (any random numbers)
 
 // Math.max(a, b, c...)vaMath.min(a, b, c...)
 
 // Argumentlarning ixtiyoriy sonidan eng katta va eng kichikni qaytaradi.
 
-alert(Math.max(3, 5, -10, 0, 1)); // 5
-alert(Math.min(1, 2)); // 1
+console.log(Math.max(3, 5, -10, 0, 1)); // 5
+console.log(Math.min(1, 2)); // 1
 
 // Math.pow(n, power)
 
 // nBerilgan quvvatga ko'tarilgan qaytib keladi .
-alert(Math.pow(2, 10)); // 2 in power 10 = 1024
+console.log(Math.pow(2, 10)); // 2 in power 10 = 1024
 // Ob'ektda ko'proq funktsiyalar va konstantalar mavjud , jumladan trigonometriya, ularni Math ob'ekti uchun hujjatlardaMath topishingiz mumkin .

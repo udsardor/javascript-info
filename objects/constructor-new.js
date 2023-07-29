@@ -80,7 +80,7 @@ function User() {
   console.log(new.target);
 }
 
-// without "new": oddiy chaqiruv va alert undefined ko'rsatadi
+// without "new": oddiy chaqiruv va console.log undefined ko'rsatadi
 User(); // undefined
 
 // with "new": new operatori yordamida chaqirilgan va bu bizga funksiyani o'zini qaytaradi.
@@ -99,7 +99,7 @@ function AutoCreateUsr(name){
 
 
 let john = AutoCreateUsr("John"); // redirects call to new User
-alert(john.name); // John
+console.log(john.name); // John
 
 // Bu ko'pincha js kutubhonalarida kod syntax'sisini moslashuvchan qilishi mumkin.
 // Ehtimol, hamma joyda ham ishlatish mumkin emas, chunki new operatorini tashlab ketish tushunmovchilikka olib kelishi mumkin. Biz hammamiz bilammizki new operatori yangi ob'ektni yaratayotgan bo'ladi.
@@ -125,7 +125,7 @@ function BigUser(){
 
 }
 
-alert(BigUser().name) // Godzilla
+console.log(BigUser().name) // Godzilla
 
 // Mana agar return bo'sh holatida this ni o'zini qaytaradi:
 function SmallUser() {
@@ -134,7 +134,7 @@ function SmallUser() {
   return ;
 }
 
-alert(new SmallUser().name); // Stephan
+console.log(new SmallUser().name); // Stephan
 
 // Boya aytganimizdek odatda konstruktorlarda return bo'lmaydi. Biz buni shunchaki maxsus hatti harakatlarni to'ldirish uchun aytib ketamiz
 
@@ -229,4 +229,4 @@ john = {
 // accumulator.read(); // adds the user-entered value
 // accumulator.read(); // adds the user-entered value
 
-// alert(accumulator.value); // shows the sum of these values
+// console.log(accumulator.value); // shows the sum of these values

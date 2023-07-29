@@ -40,16 +40,16 @@
 
         switch (a) {
           case 3:
-            alert( 'Kichikroq' );
+            console.log( 'Kichikroq' );
             break;
           case 4:
-            alert( 'Aniq!' );
+            console.log( 'Aniq!' );
             break;
           case 5:
-            alert( 'Kattaroq' );
+            console.log( 'Kattaroq' );
             break;
           default:
-            alert( "I don't know such values" );
+            console.log( "I don't know such values" );
         }
         // 1) Switch (a) ni birinchi case bilan ya'ni 3 bilan qat'iy tenglikda tekshiradi va case muvaffaqqiyatsiz bo'ladi sababi 4 ' 3 ga teng emas
         // 2) keyingi case bilan solishtiradi va keyingi case 4 va mos keladi va kod eng yaqin breakgacha ishga tushirladi
@@ -60,19 +60,19 @@
 
         switch (c) {
           case 3:
-            alert( 'Too small' );
+            console.log( 'Too small' );
           case 4:
-            alert( 'Exactly!' );
+            console.log( 'Exactly!' );
           case 5:
-            alert( 'Too big' );
+            console.log( 'Too big' );
           default:
-            alert( "I don't know such values" );
+            console.log( "I don't know such values" );
         }
         // Natijaga faqatgina birinchi case chiqmaydi.
         // Huddi bunday
-        // alert( 'Exactly!' );
-        // alert( 'Too big' );
-        // alert( "I don't know such values" );
+        // console.log( 'Exactly!' );
+        // console.log( 'Too big' );
+        // console.log( "I don't know such values" );
 
         // Switch va case ga biz o'zboshimcha argumentlarni qo'shishimiz ham mumkin mana bu yerda misol: 
         let a = "1";
@@ -80,11 +80,11 @@
 
         switch (+a) {
           case b + 1:
-            alert("Bu ishlaydi sababi +a 1, albatta b+1 ga teng bo'ladi");
+            console.log("Bu ishlaydi sababi +a 1, albatta b+1 ga teng bo'ladi");
             break;
 
           default:
-            alert("this doesn't run");
+            console.log("this doesn't run");
         }
 
         // Biz case larni guruh qilib ishlatsak ham bo'ladi;
@@ -92,17 +92,17 @@
 
         switch (a) {
           case 4:
-            alert('Right!');
+            console.log('Right!');
             break;
 
           case 3: // (*) grouped two cases
           case 5:
-            alert('Wrong!');
-            alert("Why don't you take a math class?");
+            console.log('Wrong!');
+            console.log("Why don't you take a math class?");
             break;
 
           default:
-            alert('The result is strange. Really.');
+            console.log('The result is strange. Really.');
         }
 
         // Bizga 3 va 5 dagi breakgacha kod ishlaydi sababi 3da  hechqanday break yo'q;
@@ -114,18 +114,18 @@
         switch (arg) {
           case '0':
           case '1':
-            alert( 'One or zero' );
+            console.log( 'One or zero' );
             break;
 
           case '2':
-            alert( 'Two' );
+            console.log( 'Two' );
             break;
 
           case 3:
-            alert( 'Never executes!' );
+            console.log( 'Never executes!' );
             break;
           default:
-            alert( 'An unknown value' );
+            console.log( 'An unknown value' );
         }
 
     </script>

@@ -51,7 +51,7 @@ console.log(user.address ? user.address.street : undefined);
 // Masalan, shunga user.address.street.name o'xshash tarzda olaylik.
 
 // let user = {}; // user has no address
-// alert(user.address ? user.address.street ? user.address.street.name : null : null);
+// console.log(user.address ? user.address.street ? user.address.street.name : null : null);
 
 // Bu juda dahshatli, hatto bunday kodni tushunishda muammolar bo'lishi mumkin.
 
@@ -59,7 +59,7 @@ console.log(user.address ? user.address.street : undefined);
 
 // let user = {}; // user has no address
 
-// alert( user.address && user.address.street && user.address.street.name ); // undefined (no error)
+// console.log( user.address && user.address.street && user.address.street.name ); // undefined (no error)
 
 // AND (&&) operatori orqali ha qilish unchalik ideal emas.
 
@@ -165,8 +165,8 @@ let user1 = {
 
 let user2 = null;
 
-alert( user1?.[key] ); // John
-alert( user2?.[key] ); // undefined
+console.log( user1?.[key] ); // John
+console.log( user2?.[key] ); // undefined
 
 // ?.Bundan tashqari, biz bilan foydalanishimiz mumkin delete:
 

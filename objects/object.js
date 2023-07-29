@@ -106,7 +106,7 @@ let bag = {
   [fruit]: 5, // Property ning nomi o'zgaruvchi orqali berilgan, o'zgaruvchining nomi esa "prompt" orqali keladi.
 };
 
-alert( bag.apple ); // Agar [fruit] = "apple" ? unda alert ga 5 soni chiqadi.
+console.log( bag.apple ); // Agar [fruit] = "apple" ? unda console.log ga 5 soni chiqadi.
 
 // Yana bir ko'rinishi ya'ni yuqoridagi misol huddi shunga o'xshab ishlaydi.
 
@@ -174,7 +174,7 @@ let obj = {
     return: 3
 };
   
-alert( obj.for + obj.let + obj.return );  // 6
+console.log( obj.for + obj.let + obj.return );  // 6
 
 // Qisqa qilib aytganda property nomlarida hechqanaqa cheklovlar yo'q. Ular harqanday satr yoki belgilardan iborat bo'lishi mumkin.
 
@@ -185,16 +185,16 @@ let typeObj = {
     0: "test" // same as "0": "test"
   };
   
-  // both alerts access the same property (the number 0 is converted to string "0")
-  alert( typeObj["0"] ); // test
-  alert( typeObj[0] ); // test (same property)
+  // both console.logs access the same property (the number 0 is converted to string "0")
+  console.log( typeObj["0"] ); // test
+  console.log( typeObj[0] ); // test (same property)
 
 
 // Javascriptda maxsus property nomiga ega bo'lga __proto__ bor. Biz uni ob'ekt bo'lmagan qiymatga beraolmaymiz.
 
 let anyObj = {};
 anyObj.__proto__ = 5; // assign a number
-alert(anyObj.__proto__); // [object Object] - the value is an object, didn't work as intended
+console.log(anyObj.__proto__); // [object Object] - the value is an object, didn't work as intended
 
 // Kodning kommentidan ko'rib turibmizki __proto__ bizga obe'kt uchun property va primitive'lar qiymat bo'la olmas ekan.
 
@@ -205,7 +205,7 @@ alert(anyObj.__proto__); // [object Object] - the value is an object, didn't wor
 
 let userX = {};
 
-alert( userX.noSuchProperty === undefined ); // true means "no such property"
+console.log( userX.noSuchProperty === undefined ); // true means "no such property"
 
 // Lekin javascriptda buni aniqlash uchun "in" nomli maxsus operatori mavjud.
 
@@ -282,7 +282,7 @@ let codes = {
 };
 
 for (let code in codes) {
-  alert(code); // 1, 41, 44, 49
+  console.log(code); // 1, 41, 44, 49
 }
 
 // Ha qachonki biz ob'ektlarni keylari uchun son ko'rinishidagi nomlarni qo'yadigan bo'lsak shunday natija hosil bo'ladi.
@@ -300,7 +300,7 @@ user.age = 25; // add one more
 
 // non-integer properties are listed in the creation order
 for (let prop in user) {
-  alert( prop ); // name, surname, age
+  console.log( prop ); // name, surname, age
 }
 
 // Shunday qilib buni tuzatish uchun:
@@ -314,7 +314,7 @@ let codec = {
 };
 
 for (let codec in codes) {
-  alert( +codec ); // 49, 41, 44, 1
+  console.log( +codec ); // 49, 41, 44, 1
 }
 
 // Xulosa

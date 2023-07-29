@@ -30,7 +30,7 @@
 		// Masalan pastdagi kod i ni 3 marta chaqiradi;
 		let i = 0;
 		while(i < 3){
-			alert(i);
+			console.log(i);
 			i = i + 1;}
 			// i++
 			// Bu yerda shart bajarilmaguncha loop tanasi bajariladi;
@@ -50,7 +50,7 @@
 
 		// yozishning yanada qisqa usuli;
 		let a = 0;
-		while(a) alert(i--);
+		while(a) console.log(i--);
 		// bunda agar loop tanasi 1 ta qatorlik bo'lsa shunday yozsa ham bo'ladi yoki {} figurali qavslar yordamida yozish kerak;
 		 // ------------------------------------------------------------------ //
 
@@ -65,7 +65,7 @@
 		// Unday bo'lmasa while() ishlatgan yaxshi;
 		let s = 0;
 		do {
-		  alert( s );
+		  console.log( s );
 		  s++;
 		} while (s < 3);
 
@@ -98,16 +98,16 @@
 
 		// Yani shart to'g'ri bo'lsa if tanasi bajariladi;
 
-		// for (let i = 0; i < 3; i++) alert(i)
+		// for (let i = 0; i < 3; i++) console.log(i)
 
 		// Boshlanishi
 		let c = 0
 		// if condition → run body and run step
-		if (c < 3) { alert(c); c++ }
+		if (c < 3) { console.log(c); c++ }
 		// if condition → run body and run step
-		if (c < 3) { alert(c); c++ }
+		if (c < 3) { console.log(c); c++ }
 		// if condition → run body and run step
-		if (c < 3) { alert(c); c++ }
+		if (c < 3) { console.log(c); c++ }
 		// ...tugaydi, chunki hozir c == 3 ga teng
 
 
@@ -115,17 +115,17 @@
 		// Bu yerda l o'zgaruvchisi to'g'ridan to'g'ri tsiklga e'lon qilinadi va scope dan tashqarida uni chaqirib bo'maydi shuning uchun xato ko'rsatadi;
 
 		for (let l = 0; l < 3; l++) {
-		  alert(l); // 0, 1, 2
+		  console.log(l); // 0, 1, 2
 		}
-		alert(l); // error, no such variable;
+		console.log(l); // error, no such variable;
 
 		// Biz yuqorida xoxlagandek chiqishi uchun O'zgaruvchini global tarzda e'lon qilishimiz kerak;
 		let l = 0;
 		for (l = 0; l < 3; l++) { // Scope dan tashqarida bo'lgan o'zgaruvchini ishlating
-		  alert(l); // 0, 1, 2
+		  console.log(l); // 0, 1, 2
 		}
 
-		alert(l); // javobi 3 bo'ladi chunki l iteratsiyadan o'tib alertga chiqadi;
+		console.log(l); // javobi 3 bo'ladi chunki l iteratsiyadan o'tib console.logga chiqadi;
 
 
 		// Biz qisimlarni ham yozmay ketishimiz mumkin;
@@ -133,13 +133,13 @@
 
 		let i = 0; // Biz allaqachon o'zgaruvchi e'lon qilib bo'lganmiz shuning uchun sintaksisni buzmagan holatda boshlanish qismini yozmasdan ketamiz
 		for (; i < 3; i++) { // boshlanishi kerak emas)
-		  alert( i ); // 0, 1, 2
+		  console.log( i ); // 0, 1, 2
 		}
 
 		// Shuningdek qadamlarni ham olib tashlashimiz mumkin;
 		let i = 0;
 		for (; i < 3;) {
-		  alert( i++ ); // qadam ni alertni ichida amalga oshirib qo'yaveramiz;
+		  console.log( i++ ); // qadam ni console.logni ichida amalga oshirib qo'yaveramiz;
 		}
 
 		// Aslida hamma narsani ham olib tashlashimiz mumkin lekin loog tanasi cheksiz bajariladi;
@@ -173,10 +173,10 @@
 			sum += value
 
 		}
-		alert(sum);
+		console.log(sum);
 
 		// Agar foydalanuvchi bosh qatorni belgilasa yoki bekor qilsa, break satrda faollashadi va tsiklni zudlik bilan to'xtatadi;
-		// Va kodni keyingi qatorga otkazadi va alert(sum) bajariladi;
+		// Va kodni keyingi qatorga otkazadi va console.log(sum) bajariladi;
 
 		// Directiv Continue
 		// Iteratsiya ning ichidagi if to'g'ri bo'lgan paytda iteratsiyani bitta oldingga sakratadi, ya'ni keyingi iteratsiyaga o'tqazadi;
@@ -188,18 +188,18 @@
 		// Ikkala kod ham bir hil natija bajaradi;
 		for (let i = 0; i < 10; i++) {
 			if (i % 2) {
-			alert( i );
+			console.log( i );
 			}
 		}
 
 		// ifodasiz break/continue
 		if (i > 5) {
-			alert(i);
+			console.log(i);
 		} else {
 			continue;
 		}
 		// Esda tutingki ifoda bolmaganda break / continue ni ternary(uchlik) operatorini ishlatib bo'lmaydi
-		(i > 5) ? alert(i) : continue; // continue isn't allowed here
+		(i > 5) ? console.log(i) : continue; // continue isn't allowed here
 		// ?Bu o'rniga savol belgisi operatorini ishlatmaslikning yana bir sababi if.
 
 		// Biz ba'zan loop ichida yana loop aylantirishimizga to'gri keladi;
@@ -212,7 +212,7 @@
 				// if(!input) break;
 			}
 		}
-		alert("Bajarilda")
+		console.log("Bajarilda")
 
 		// Biz bu holatda label ishlatishimiz kerak bo'ladi;
 		// Umumiy sintaksis: 
@@ -232,7 +232,7 @@
 	    // do something with the value...
 	  }
 	}
-	alert('Done!');
+	console.log('Done!');
 
 
 	// Sintaksik o'zgaruv

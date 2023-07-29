@@ -23,9 +23,9 @@ let fruits = ["Apple", "Orange", "Plum"];
 
 let myFruits = ["Apple", "Orange", "Plum"];
 
-alert(myFruits[0]); // Apple
-alert(myFruits[1]); // Orange
-alert(myFruits[2]); // Plum
+console.log(myFruits[0]); // Apple
+console.log(myFruits[1]); // Orange
+console.log(myFruits[2]); // Plum
 
 // Biz elementni almashtirishimiz mumkin:
 
@@ -37,21 +37,21 @@ fruits[3] = 'Lemon'; // now ["Apple", "Orange", "Pear", "Lemon"]
 
 // Massivdagi elementlarning umumiy soni uning length:
 
-alert(fruits.length); // 3
+console.log(fruits.length); // 3
 
-// alertda biz butun massivni ko'rsatish uchun ham foydalanishimiz mumkin .
+// console.logda biz butun massivni ko'rsatish uchun ham foydalanishimiz mumkin .
 
-alert(fruits); // Apple,Orange,Plum
+console.log(fruits); // Apple,Orange,Plum
 
 // Massiv har qanday turdagi elementlarni saqlashi mumkin.
 
 // Masalan:
 
 // mix of values
-let arr = ['Apple', { name: 'John' }, true, function () { alert('hello'); }];
+let arr = ['Apple', { name: 'John' }, true, function () { console.log('hello'); }];
 
 // get the object at index 1 and then show its name
-alert(arr[1].name); // John
+console.log(arr[1].name); // John
 
 // get the function at index 3 and run it
 arr[3](); // hello
@@ -69,7 +69,7 @@ arr[3](); // hello
 
 let anotherFruits = ["Apple", "Orange", "Plum"];
 
-alert(anotherFruits[anotherFruits.length - 1]); // Plum
+console.log(anotherFruits[anotherFruits.length - 1]); // Plum
 
 // Biroz noqulay, shunday emasmi? O'zgaruvchi nomini ikki marta yozishimiz kerak.
 
@@ -78,7 +78,7 @@ alert(anotherFruits[anotherFruits.length - 1]); // Plum
 let fruits = ["Apple", "Orange", "Plum"];
 
 // same as fruits[fruits.length-1]
-alert(fruits.at(-1)); // Plum
+console.log(fruits.at(-1)); // Plum
 
 // Boshqacha aytganda arr.at(i).
 
@@ -121,9 +121,9 @@ alert(fruits.at(-1)); // Plum
 
 let fruits = ["Apple", "Orange", "Pear"];
 
-alert(fruits.pop()); // remove "Pear" and alert it
+console.log(fruits.pop()); // remove "Pear" and console.log it
 
-alert(fruits); // Apple, Orange
+console.log(fruits); // Apple, Orange
 
 // Ikkala fruits.pop() va fruits.at(-1) arrayning ohirgi elementini qaytaradi, lekin pop methodi shu bilan birga uni o'chirib yuboradi.
 
@@ -133,7 +133,7 @@ alert(fruits); // Apple, Orange
 
 fruits.push("Pear");
 
-alert(fruits); // Apple, Orange, Pear
+console.log(fruits); // Apple, Orange, Pear
 
 // fruits.push(...) ni chaqirish fruits[fruits.length] = "element" ga teng
 
@@ -143,9 +143,9 @@ alert(fruits); // Apple, Orange, Pear
 
 // Arraydan birinchida turgan elementni qirqib tashlaydi: 
 
-alert(fruits.shift()); // remove Apple and alert it
+console.log(fruits.shift()); // remove Apple and console.log it
 
-alert(fruits); // Orange, Pear
+console.log(fruits); // Orange, Pear
 
 // unshift
 
@@ -153,7 +153,7 @@ alert(fruits); // Orange, Pear
 
 fruits.unshift('Apple');
 
-alert(fruits); // Apple, Orange, Pear
+console.log(fruits); // Apple, Orange, Pear
 
 // Shift, push methodlari bir deganda bir nechta elementlarni ham qo'sha oladi:
 
@@ -163,7 +163,7 @@ myFruit.push("Orange", "Peach");
 myFruit.unshift("Pineapple", "Lemon");
 
 // ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
-alert(myFruit);
+console.log(myFruit);
 
 // Arraylar ob'ektlarning maxsus turidir. To'rtburchak [] qavslar orqali property ga murojat qilishi bu aslida ob'ekt syntaxisisdan kelgan. Huddi obj[key] dek.
 
@@ -176,11 +176,11 @@ let fruits = ["Banana"]
 
 let myarr = fruits; // faqat ikkita link hosil bo'ldi yangi massiv emas.
 
-alert(myarr === fruits); // true
+console.log(myarr === fruits); // true
 
 myarr.push("Pear"); // link orqali arrayni o'zgartirdik
 
-alert(fruits); // Banana, Pear - 2 items now
+console.log(fruits); // Banana, Pear - 2 items now
 
 // Ammo arraylarni chindan ham o'ziga xos qiladigan narsa bu uning ichki ko'rinishidir. Va ko'rganimizdek javascript dvigateli arraylarni birin ketin tartibda xotiraga saqlashda va boshqa optimal narsalari ham bor hisoblanadi.
 
@@ -243,7 +243,7 @@ console.log(fruits);
 let newarr = ["Apple", "Orange", "Pear"];
 
 for (let i = 0; i < newarr.length; i++) {
-  alert( newarr[i] );
+  console.log( newarr[i] );
 }
 
 // Ammo massivlar uchun tsiklning yana bir shakli mavjud for..of:
@@ -252,5 +252,55 @@ let myotherfruits = ["Apple", "Orange", "Plum"];
 
 // iterates over array elements
 for (let fruit of myotherfruits) {
-  alert( fruit );
+  console.log( fruit );
 }
+
+// For..of sintaksisi bizga raqam emas faqat qiymati o'zini qaytaradi, va deyarli barcha holatlarda bu yetarli bo'ladi.
+
+// Texnik jihatdan arraylar ham ob'ekt hisoblanadi, demak for..in ham ishlatsak bo'ladi:
+
+let myNdArr = ["Apple", "Orange", "Pear"];
+
+for (let key in myNdArr) {
+  console.log( myNdArr[key] ); // Apple, Orange, Pear // key = 0, 1, 2
+}
+
+// Lekin bu haqiqatdanham yomon usul. Bu yerda muammolarga ko'p olib kelishi mumkin.
+
+// 1. Loop faqatgina nomerlarni emas balki hamma propertylar bo'ylab aylanadi.
+    // Brauzerda va boshqa muhitlarda massivga o'xshash "massivga o'xshash" ob'ektlar mavjud. Ya'ni, ular lengthxossalarga ega va indekslar. lekin ular odatda bizga kerak bo'lmagan boshqa raqamli bo'lmagan xususiyatlar va usullarga ham ega bo'lishi mumkin. Loop for..inularni ro'yxatga oladi. Shunday qilib, agar biz massivga o'xshash ob'ektlar bilan ishlashimiz kerak bo'lsa,unda bu "qo'shimcha" xususiyatlar muammoga aylanishi mumkin.
+
+// 2. Loop for..inmassivlar uchun emas, balki umumiy ob'ektlar uchun optimallashtirilgan va shuning uchun 10-100 marta sekinroq. Albatta, bu hali ham juda tez. Tezlik faqat to'siqlarda muhim bo'lishi mumkin. Ammo baribir biz farqni bilishimiz kerak.
+
+// for..inUmuman olganda, biz massivlar uchun foydalanmasligimiz kerak.
+
+// length
+// Massivni o'zgartirganimizda length xususiyati avtomatik yangilanadi. Aniqroq aytadigan bo'lsak, bu aslida massivlardagi qiymatlar soni emas, balki eng katta raqam indexi hisoblanadi.
+
+// Masalan, katta indeksli bitta element katta uzunlikni beradi:
+
+let fruits = [];
+fruits[123] = "Apple";
+
+console.log( fruits.length ); // 124
+
+// Odatda biz massivlarni bunday qilib ishlatmaymiz. 
+// Mulkning yana bir qiziq tomoni lengthshundaki, u qayta yozilishi mumkin.
+// Agar biz uni qo'lda oshirsak, qiziq narsa bo'lmaydi. Ammo agar biz uni kamaytirsak, massiv kesiladi. Jarayon qaytarilmas, buning misoli:
+
+let anyArr = [1, 2, 3, 4, 5];
+
+anyArr.length = 2; // truncate to 2 elements
+console.log( anyArr ); // [1, 2]
+
+anyArr.length = 5; // return length back
+console.log( anyArr[3] ); // undefined: the values do not return
+
+// Shunday qilib, massivni tozalashning eng oddiy usuli: arr.length = 0;.
+
+// new Array() 
+
+// Massiv yaratish uchun yana bitta sintaksis mavjud:
+let arrMy = new Array("Apple", "Pear", "etc");
+
+// U kamdan-kam qo'llaniladi, chunki kvadrat qavslar []qisqaroq. Bundan tashqari, u bilan murakkab xususiyat mavjud.
