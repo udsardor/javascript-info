@@ -243,7 +243,7 @@ console.log(fruits);
 let newarr = ["Apple", "Orange", "Pear"];
 
 for (let i = 0; i < newarr.length; i++) {
-  console.log( newarr[i] );
+    console.log(newarr[i]);
 }
 
 // Ammo massivlar uchun tsiklning yana bir shakli mavjud for..of:
@@ -252,7 +252,7 @@ let myotherfruits = ["Apple", "Orange", "Plum"];
 
 // iterates over array elements
 for (let fruit of myotherfruits) {
-  console.log( fruit );
+    console.log(fruit);
 }
 
 // For..of sintaksisi bizga raqam emas faqat qiymati o'zini qaytaradi, va deyarli barcha holatlarda bu yetarli bo'ladi.
@@ -262,13 +262,13 @@ for (let fruit of myotherfruits) {
 let myNdArr = ["Apple", "Orange", "Pear"];
 
 for (let key in myNdArr) {
-  console.log( myNdArr[key] ); // Apple, Orange, Pear // key = 0, 1, 2
+    console.log(myNdArr[key]); // Apple, Orange, Pear // key = 0, 1, 2
 }
 
 // Lekin bu haqiqatdanham yomon usul. Bu yerda muammolarga ko'p olib kelishi mumkin.
 
 // 1. Loop faqatgina nomerlarni emas balki hamma propertylar bo'ylab aylanadi.
-    // Brauzerda va boshqa muhitlarda massivga o'xshash "massivga o'xshash" ob'ektlar mavjud. Ya'ni, ular lengthxossalarga ega va indekslar. lekin ular odatda bizga kerak bo'lmagan boshqa raqamli bo'lmagan xususiyatlar va usullarga ham ega bo'lishi mumkin. Loop for..inularni ro'yxatga oladi. Shunday qilib, agar biz massivga o'xshash ob'ektlar bilan ishlashimiz kerak bo'lsa,unda bu "qo'shimcha" xususiyatlar muammoga aylanishi mumkin.
+// Brauzerda va boshqa muhitlarda massivga o'xshash "massivga o'xshash" ob'ektlar mavjud. Ya'ni, ular lengthxossalarga ega va indekslar. lekin ular odatda bizga kerak bo'lmagan boshqa raqamli bo'lmagan xususiyatlar va usullarga ham ega bo'lishi mumkin. Loop for..inularni ro'yxatga oladi. Shunday qilib, agar biz massivga o'xshash ob'ektlar bilan ishlashimiz kerak bo'lsa,unda bu "qo'shimcha" xususiyatlar muammoga aylanishi mumkin.
 
 // 2. Loop for..inmassivlar uchun emas, balki umumiy ob'ektlar uchun optimallashtirilgan va shuning uchun 10-100 marta sekinroq. Albatta, bu hali ham juda tez. Tezlik faqat to'siqlarda muhim bo'lishi mumkin. Ammo baribir biz farqni bilishimiz kerak.
 
@@ -282,7 +282,7 @@ for (let key in myNdArr) {
 let fruits = [];
 fruits[123] = "Apple";
 
-console.log( fruits.length ); // 124
+console.log(fruits.length); // 124
 
 // Odatda biz massivlarni bunday qilib ishlatmaymiz. 
 // Mulkning yana bir qiziq tomoni lengthshundaki, u qayta yozilishi mumkin.
@@ -291,10 +291,10 @@ console.log( fruits.length ); // 124
 let anyArr = [1, 2, 3, 4, 5];
 
 anyArr.length = 2; // truncate to 2 elements
-console.log( anyArr ); // [1, 2]
+console.log(anyArr); // [1, 2]
 
 anyArr.length = 5; // return length back
-console.log( anyArr[3] ); // undefined: the values do not return
+console.log(anyArr[3]); // undefined: the values do not return
 
 // Shunday qilib, massivni tozalashning eng oddiy usuli: arr.length = 0;.
 
@@ -303,4 +303,164 @@ console.log( anyArr[3] ); // undefined: the values do not return
 // Massiv yaratish uchun yana bitta sintaksis mavjud:
 let arrMy = new Array("Apple", "Pear", "etc");
 
-// U kamdan-kam qo'llaniladi, chunki kvadrat qavslar []qisqaroq. Bundan tashqari, u bilan murakkab xususiyat mavjud.
+// U kamdan-kam qo'llaniladi, chunki kvadrat qavslar [] qisqaroq. Bundan tashqari, u bilan murakkab xususiyat mavjud.
+// Agar new Array(num) sintaksisiga uning argumentiga nomer beriladigan bo'lsa u elementlarsiz yaratiladi lekin berilgan son uzunlikdagi massiv yaratiladi.
+
+let myfrr = new Array(2);
+
+console.log(myfrr); // [<2 empty items>]
+console.log(myfrr[0]); // undefined.
+
+console.log(myfrr.length); // 2
+
+// Bundan qochish uchun biz odatda to'rtburchak qavslarni ishlatamiz, va avzal ko'rilganiham o'shadir.
+
+// Multidemensional arrays - Ko'p olchovli arraylar
+
+// Arraylar o'z ichida arraylarni saqlashi mumkin. Biz buni ko'p olchovli arraylar uchun ishlatamiz, misol uchun matritsalarni saqlash mumkin:
+
+// Matritsa - bu ko'p o'lchovli massiv yoki jadval ko'rinishidagi ma'lumotlar strukturasi. Oddiy matritsa axborot elementlarining to'g'ri to'rtburchakli jadvali hisoblanadi. 
+
+// Masalan:
+
+// 1 2 3
+// 4 5 6
+// 7 8 9
+
+// Bu 3 x 3 o'lchamli matritsa. Matritsalarda quyidagi asosiy tushunchalar mavjud:
+
+// - Element - matritsaning har bir katakchasi alohida element hisoblanadi. Yuqoridagi misolda 1, 2, 3, 4, ..., 9 elementlardir.
+
+// - Qator va ustunlar - matritsa qator va ustunlar ko'rinishida tashkil topgan bo'ladi. Yuqoridagi misolda 3 ta qator va 3 ta ustun mavjud.
+
+// - O'lcham - matritsaning qator va ustunlar soni uning o'lchamini ko'rsatadi. Yuqoridagi 3x3 o'lchamli matritsa.
+
+// - Diagonal - chap yuqori burchakdan o'ng quyi burchakka o'tuvchi elementlar diagonal deb ataladi.
+
+// - Transponirlangan matritsa - matritsani ustunlarini qatorlar bilan almashtirish transponirlash deyiladi.
+
+// Matritsalar ko'plab matematik masalalarni yechishda qo'llaniladi, jumladan, tenglama tizimlarini yechishda, vektor va koordinatalar bilan ishlashda va hokazo.
+
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(matrix[1][1]); // array markazidagi element
+
+// toString()
+
+// Massivlar toString nomli vergul bilan ajratilgan string qaytaradigan method ishlatishi mumkin.
+
+let stArr = [1, 2, 3];
+
+console.log(stArr); // 1,2,3
+console.log(String(stArr) === '1,2,3'); // true
+
+// Keling buniham sinab ko'ramiz:
+
+console.log([] + 1); // "1"
+console.log([1] + 1); // "11"
+console.log([1, 2] + 1); // "1,21"
+
+// Arraylarda Symbol.toPrimitive methodi yo'q, valueOf ham mavjud emas, array faqat toString degan methodni amalga oshirishga urinadi, shunday qilib [] to'rtburchak qavslar bo'sh stringga aylanadi, ya'ni [1] = "1", [1,2] esa "1, 2" ga konvert bo'ladi
+// Ikkilik plyus "+"operatori satrga biror narsa qo'shganda, u ham uni satrga aylantiradi, shuning uchun keyingi qadam quyidagicha ko'rinadi:
+
+console.log("" + 1); // "1"
+console.log("1" + 1); // "11"
+console.log("1,2" + 1); // "1,21"
+
+// Massivlarni == bilan solishtirmang
+
+// JavaScript-dagi massivlar, ba'zi boshqa dasturlash tillaridan farqli o'laroq, == operatori bilan solishtirilmasligi kerak.
+// == operatori arraylar uchun maxsus ishlovga ega emas, u harqanday ob'ekt kabi ishlaydi.
+
+// Keling qoidalarni takrorlaymiz: 
+
+// Ikkita ob'ekt faqatgina 2 ta birxil havolaga  ega bo'lganida teng bo'ladi.
+
+// Agar tenglik tekshirishning bir tarafi ob'ekt bo'lsa, va bittasi primitive bo'lsa, bu vaxta ob'ekt primitive ga konvertatsiya bo'ladi, huddi ob'ekt to primitive mavzusida ko'rganimizdek.
+
+// Qattiq tenglik juda oson, bilamizki === qattiq tenglik type konvert qilmasdan tekshiradi.
+// Demak agarda biz == operatori yordamida tekshiradigan bo'lsak bu hechqachon birxil bo'lmaydi, agarda biz ikkita bitta ob'ektga yo'nalitirilgan reference bo'lmasagina: 
+
+console.log([] == []); // false
+console.log([0] == [0]); // false
+
+// Bu massivlar texnik jihatdan har xil ob'ektlardir. Demak, ular teng emas. Operator ==elementma-element taqqoslash qilmaydi.
+
+// Primmitive bilan taqqoslash g'alati tuyulgan natijalarni ham berishi mumkin:
+
+console.log(Number([])); // 0
+console.log( 0 == [] ); // true  chunki [] qavs taqqoslash uchun 0 ga ayalanadi. 
+
+console.log('0' == [] ); // false // bilamizki string ichida hattoki bo'sh  bitta probel ham bo'lsa true bo'ladi
+
+// Bu yerda ikkala holatda ham massiv bilan primitive solishtirayapmiz. Shunday qilib, massiv [] taqqoslash uchun primitive "" ga aylanadi.
+
+// Keyin taqqoslash jarayoni ibtidoiylar bilan davom etadi, bu bobda tavsiflangan konvertatsiya turlari:
+
+// after [] was converted to ''
+console.log(Number("")); // 0
+console.log( 0 == '' ); // true, as '' becomes converted to number 0
+
+console.log('0' == '' ); // false, no type conversion, different strings
+
+// Xo'sh, massivlarni qanday solishtirish mumkin?
+
+// Bu oddiy: operatordan foydalanmang ==. Buning o'rniga, ularni tsiklda yoki keyingi bobda tushuntirilgan iteratsiya usullaridan foydalanib, elementlarni taqqoslang.
+
+// Xulosa:
+
+// Massiv - buyurtma qilingan ma'lumotlar elementlarini saqlash va boshqarish uchun mos keladigan maxsus turdagi ob'ekt.
+
+// Declaration - Yaratilishi
+
+// square brackets (usual)
+// let arr = [item1, item2...];
+
+// new Array (exceptionally rare)
+// let arr = new Array(item1, item2...);
+
+// Qo'ng'iroq new Array(number)berilgan uzunlikdagi, lekin elementlarsiz massivni yaratadi.
+
+// Xususiyat length massiv uzunligi yoki aniqrog'i, uning oxirgi raqamli indeksi plus bitta. U massiv usullari bilan avtomatik sozlanadi.
+
+// Agar biz lengthqo'lda qisqartirsak, massiv kesiladi.
+
+// Elementlarni olish:
+
+// arr[0] kabi indeks bo'yicha elementni olishimiz mumkin
+// at(i)manfiy indekslarga ruxsat beruvchi usuldan ham foydalanishimiz mumkin . ning manfiy qiymatlari uchun iu massiv oxiridan orqaga qadam tashlaydi. Agar i >= 0u bilan bir xil ishlaydi arr[i].
+
+// Biz quyidagi amallar bilan massivni deque sifatida ishlatishimiz mumkin:
+
+// push(...items)itemsoxiriga qo'shadi .
+// pop()elementni oxiridan olib tashlaydi va uni qaytaradi.
+// shift()elementni boshidan olib tashlaydi va uni qaytaradi.
+// unshift(...items)itemsboshiga qo'shadi .
+
+// Massiv elementlari ustida loop uchun:
+
+// for (let i=0; i<arr.length; i++)- eng tez ishlaydi, eski brauzerga mos keladi.
+// for (let item of arr)- faqat elementlar uchun zamonaviy sintaksis,
+// for (let i in arr)- hech qachon foydalanmang.
+
+// Massivlarni solishtirish uchun == operatordan (shuningdek >, va boshqalar) foydalanmang <, chunki ular massivlar uchun maxsus ishlov berilmagan. Ular ularni har qanday ob'ekt sifatida ko'rib chiqadilar va bu biz odatda xohlagan narsa emas.
+
+// for..of Buning o'rniga massivlarni elementma-element solishtirish uchun tsikldan foydalanishingiz mumkin .
+
+// Biz massivlar bilan davom etamiz va keyingi bobda massivlarni qo'shish, olib tashlash, ajratib olish va massivlarni saralash usullarini o'rganamiz .
+
+// Vazifalar: 
+
+let fruits = ["Apples", "Pear", "Orange"];
+
+// push a new value into the "copy"
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+// what's in fruits?
+console.log( fruits.length ); // ?
+
