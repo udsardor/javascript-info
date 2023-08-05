@@ -56,7 +56,7 @@ console.log(arr[1].name); // John
 // get the function at index 3 and run it
 arr[3](); // hello
 
-// Ohirgi elementni at orqali olishimiz mumkin hisoblanadi
+// Ohirgi elementni at orqali olishimiz mumkin
 // Yangi qo'shilgan hisoblanadi eski browserlar uchun pollifils kerek bo'ladi.
 
 // Keling arraydagi ohirgi element kerak deyilik.
@@ -107,11 +107,11 @@ console.log(fruits.at(-1)); // Plum
 
 // push \/ - pop /\
 
-// Stacklarda oxirgi qo'shilgan narsa birinchi bo'lib qabul qilib olinadi, bu yana LIFO ham deb ataladi (Las-in-First-out), Queue lar esa FIFO (First-in-First-out)
+// Stacklarda oxirgi qo'shilgan narsa birinchi bo'lib qabul qilib olinadi, bu yana LIFO ham deb ataladi (Last-in-First-out), Queue lar esa FIFO (First-in-First-out)
 
 // Arraylar ikkala queue va stackdan foydalanishi mumkin. Bu bizga elementlar qo'shish yoki olib tashlashda yordam beradi, boshidan ham ohiridan ham.
 
-// Kompyuter fanlarida, yana bitta struktura mavjud, bu deque deb ham ataladi.
+// Kompyuter fanlarida, yana bitta struktura mavjud, bu deque deb ham ataladi. Double ended queue
 
 // Massiv ohiri bilan ishlatilinadigan methodlar:
 
@@ -194,7 +194,7 @@ fruits[99999] = 5; // arrayni o'zini uzunligidan ham ortiqroq index berib uni pr
 
 fruits.age = 25; // array property sini huddi ob'ektniki kabi qo'shsak
 
-console.log(fruits);
+console.log(fruits.age);
 
 // Bu mumkin, chunki massivlar ularning bazasida joylashgan ob'ektlardir. Biz ularga har qanday xususiyatni qo'shishimiz mumkin.
 
@@ -221,13 +221,13 @@ console.log(fruits);
 
 // Indeks bilan elementni olib tashlang 0.
 // Barcha elementlarni chapga siljiting, ularni indeksdan 1ga 0, dan 2ga 1va hokazolarga qayta raqamlang.
-// Mulkni yangilang length.
+// Mulkni length yangilaydi.
 
 // Massivdagi elementlar qancha ko'p bo'lsa, ularni ko'chirish uchun ko'proq vaqt, xotirada ko'proq operatsiyalar.
 
 // Shunga o'xshash narsa bilan sodir bo'ladi unshift: massivning boshiga element qo'shish uchun biz avval mavjud elementlarni indekslarini oshirib, o'ngga siljitishimiz kerak.
 
-// Va nima bilan push/pop? Ular hech narsani siljitishlari shart emas. Elementni oxiridan chiqarish uchun popusul indeksni tozalaydi va length qisqartiradi.
+// Va nima bilan push/pop? Ular hech narsani siljitishlari shart emas. Elementni oxiridan chiqarish uchun pop usul indeksni tozalaydi va length qisqartiradi.
 
 // Operatsiya uchun harakatlar pop:
 
@@ -238,7 +238,7 @@ console.log(fruits);
 
 // Loops
 
-// Massiv elementlarini aylanishning eng qadimiy usullaridan biri bu forindekslar ustidan aylanishdir:
+// Massiv elementlarini aylanishning eng qadimiy usullaridan biri bu for indekslar ustidan aylanishdir:
 
 let newarr = ["Apple", "Orange", "Pear"];
 
@@ -319,7 +319,7 @@ console.log(myfrr.length); // 2
 
 // Arraylar o'z ichida arraylarni saqlashi mumkin. Biz buni ko'p olchovli arraylar uchun ishlatamiz, misol uchun matritsalarni saqlash mumkin:
 
-// Matritsa - bu ko'p o'lchovli massiv yoki jadval ko'rinishidagi ma'lumotlar strukturasi. Oddiy matritsa axborot elementlarining to'g'ri to'rtburchakli jadvali hisoblanadi. 
+// Matritsa - bu ko'p o'lchovli massiv yoki jadval ko'rinishidagi ma'lumotlar strukturasi. Oddiy matritsa axborot elementlarining to'g'ri to'rtburchakli jadvali hisoblanadi.
 
 // Masalan:
 
@@ -347,7 +347,15 @@ let matrix = [
     [7, 8, 9]
 ];
 
-console.log(matrix[1][1]); // array markazidagi element
+// console.log(matrix[1][1]); // array markazidagi element
+
+// for(let i of matrix ){
+//     if(typeof i == "object"){
+//         for ( let j in i){
+//             console.log(j);
+//         }
+//     }
+// }
 
 // toString()
 
@@ -393,9 +401,9 @@ console.log([0] == [0]); // false
 // Primmitive bilan taqqoslash g'alati tuyulgan natijalarni ham berishi mumkin:
 
 console.log(Number([])); // 0
-console.log( 0 == [] ); // true  chunki [] qavs taqqoslash uchun 0 ga ayalanadi. 
+console.log(0 == []); // true  chunki [] qavs taqqoslash uchun 0 ga ayalanadi.
 
-console.log('0' == [] ); // false // bilamizki string ichida hattoki bo'sh  bitta probel ham bo'lsa true bo'ladi
+console.log('0' == []); // false // bilamizki string ichida hattoki bo'sh  bitta probel ham bo'lsa true bo'ladi
 
 // Bu yerda ikkala holatda ham massiv bilan primitive solishtirayapmiz. Shunday qilib, massiv [] taqqoslash uchun primitive "" ga aylanadi.
 
@@ -403,9 +411,9 @@ console.log('0' == [] ); // false // bilamizki string ichida hattoki bo'sh  bitt
 
 // after [] was converted to ''
 console.log(Number("")); // 0
-console.log( 0 == '' ); // true, as '' becomes converted to number 0
+console.log(0 == ''); // true, as '' becomes converted to number 0
 
-console.log('0' == '' ); // false, no type conversion, different strings
+console.log('0' == ''); // false, no type conversion, different strings
 
 // Xo'sh, massivlarni qanday solishtirish mumkin?
 
@@ -462,5 +470,35 @@ let shoppingCart = fruits;
 shoppingCart.push("Banana");
 
 // what's in fruits?
-console.log( fruits.length ); // ?
+console.log(fruits.length); // ?
 
+// let styles = [
+//     "Jazz", "Blues"
+// ]
+
+// styles.push("Rock-n-Roll")
+// styles[1] = "Classics";
+// styles.shift();
+// styles.unshift("Rap", "Reggae")
+
+// let ine = {
+//     a: "ji"
+// };
+
+// ine.hi = function(){
+//     console.log(this);
+// }
+
+// ine.hi(); // a,b,function(){...}
+
+
+// function sumInput(){
+//     let userStuffs = prompt("A?", 0),
+//         sfuffsBox = []
+
+//     sfuffsBox.push(userStuffs);
+
+//     return sfuffsBox
+// }
+
+// console.log(sumInput());
