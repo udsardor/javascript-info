@@ -664,3 +664,4 @@ console.log(arraysEqual([1, 2], [1, 2])); // true
 
 // Keyinchalik massiv bilan biror narsa qilish kerak bo'lganda va qanday qilishni bilmasangiz - bu erga keling, cheat varag'iga qarang va to'g'ri usulni toping. Misollar uni to'g'ri yozishga yordam beradi. Tez orada siz o'zingizning aniq harakatlaringizsiz usullarni avtomatik ravishda eslab qolasiz.
 
+// Vazifalar:

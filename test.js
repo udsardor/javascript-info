@@ -213,6 +213,151 @@ let id = Symbol("id");
 // console.log(fruits);
 
 
-function getMaxSubSum(arr){
+// function getMaxSubSum(arr){
     
-}
+// 3 + 3
+
+// operand bu operatorilarning chap va o'ng tarafidagi sonlar
+// Agar operatorning (*, /, + - ) bitta operandi bo'lsa bu unary deb ataladi.
+
+
+let x = 1; // number
+
+x = -x;
+
+console.log(x);
+
+// Binary
+
+let a = 1,
+    y = 3;
+console.log(y - a); // 2
+
+// Qollab quvvatlanadigan matematik operatsiyalar:
+
+// + qo'shish
+// - ayirish
+// * ko'paytirish
+// / bo'lish
+// % qoldiq hisoblaydigan operator sonni nimadirga bo'lgandagi qoldiq
+// ** darajaga oshirish
+
+// console.log(12 % 2); // 0
+// console.log(5 ** 3);
+
+// let o = "mening",
+//     p = "matnim"
+
+// console.log("mening" +  "matning");
+
+// let s = "my " - "string";
+
+// console.log(s);
+
+// let l = 1 > 10   1 kattami 10
+// let l = 1 < 10   1 kichikni 10
+// console.log(l);
+
+// console.log("1" + 1);
+// console.log(1 + "1");
+
+// console.log("1" / 1);
+
+// console.log(2 + 2 + "1");
+
+// console.log("1" + 2 + 2);
+
+
+// console.log( '6' / '2e' )
+
+console.log(typeof(+"1"));
+
+console.log(1 +  +"1");
+
+console.log(+"1hello");
+
+// no effect
+// let r = 1;
+
+// r = +r;
+
+// console.log(r);
+
+// let l = "10";
+
+// console.log(typeof l);
+// console.log(typeof +l);
+
+// Boolean
+
+// true  1
+// false 0
+// Number() === +unary
+// birxil
+// console.log(+(true));
+// console.log(Number(false)); 
+
+let apples = "2";
+let oranges = "3";
+
+console.log( +apples  +  +oranges ); // "23", the binary plus concatenates strings
+
+console.log((10 * 10 )** 2);
+
+// let o = 10 + 10
+
+// let n = 9;
+// n = n * 10
+
+// console.log(n);
+
+let n = 2;
+
+// n = n * 2
+// n = n - 2
+// n *= 2
+// n -= 2
+// n += 2
+// n **= 2
+// console.log(n);
+
+// let a = 1;
+// let b = 2;
+
+// let c = 3 - (a = b + 1);
+
+// console.log(a);
+
+// bitta oshirish
+
+// let l = 1;
+// l++
+// // console.log(l);
+
+// // bitta kamaytirish --
+// l--
+
+// console.log(l);
+
+// let a = 2;
+
+// let x = 1 + (a *= 2);
+//  x=5
+
+
+
+//10
+//2
+//1
+//2
+//6
+//45px
+//$45
+//2
+//2px
+//14
+//4
+//Nan
+//Nan
+//Nan
+
