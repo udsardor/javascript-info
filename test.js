@@ -128,7 +128,6 @@ let id = Symbol("id");
 //     }
 // }
 
-
 // let b = {
 //     name: "Asal",
 //     age: 45,
@@ -149,10 +148,11 @@ let id = Symbol("id");
 //         return hint == "string" ? `{name: "${this.name}"}` : this.age
 //     }
 // }
+let html = document.querySelectorAll("li");
 
+console.log(html);
 // console.log(c);
 // console.log(+c + 10)
-
 
 // let st = "My dog, another dog";
 
@@ -168,7 +168,6 @@ let id = Symbol("id");
 
 //     post = foundPos - 1
 // }
-
 
 // let str = "";
 
@@ -189,10 +188,10 @@ let id = Symbol("id");
 
 // function ucFirst(str) {
 //     if (!str) return str;
-  
+
 //     return str[0].toUpperCase() + str.slice(1);
 //   }
-  
+
 //   console.log( ucFirst("   john") ); // John
 
 // Check spam:
@@ -212,14 +211,12 @@ let id = Symbol("id");
 
 // console.log(fruits);
 
-
 // function getMaxSubSum(arr){
-    
+
 // 3 + 3
 
 // operand bu operatorilarning chap va o'ng tarafidagi sonlar
 // Agar operatorning (*, /, + - ) bitta operandi bo'lsa bu unary deb ataladi.
-
 
 let x = 1; // number
 
@@ -230,7 +227,7 @@ console.log(x);
 // Binary
 
 let a = 1,
-    y = 3;
+  y = 3;
 console.log(y - a); // 2
 
 // Qollab quvvatlanadigan matematik operatsiyalar:
@@ -267,12 +264,11 @@ console.log(y - a); // 2
 
 // console.log("1" + 2 + 2);
 
-
 // console.log( '6' / '2e' )
 
-console.log(typeof(+"1"));
+console.log(typeof +"1");
 
-console.log(1 +  +"1");
+console.log(1 + +"1");
 
 console.log(+"1hello");
 
@@ -295,14 +291,14 @@ console.log(+"1hello");
 // Number() === +unary
 // birxil
 // console.log(+(true));
-// console.log(Number(false)); 
+// console.log(Number(false));
 
 let apples = "2";
 let oranges = "3";
 
-console.log( +apples  +  +oranges ); // "23", the binary plus concatenates strings
+console.log(+apples + +oranges); // "23", the binary plus concatenates strings
 
-console.log((10 * 10 )** 2);
+console.log((10 * 10) ** 2);
 
 // let o = 10 + 10
 
@@ -344,8 +340,6 @@ let n = 2;
 // let x = 1 + (a *= 2);
 //  x=5
 
-
-
 //10
 //2
 //1
@@ -361,3 +355,34 @@ let n = 2;
 //Nan
 //Nan
 
+let users = [
+  {
+    age: 18,
+    name: "Mary",
+    [Symbol.toPrimitive](hint) {
+      return hint == "string" ? this.name : this.age;
+    },
+  },
+  {
+    age: 15,
+    name: "John",
+    [Symbol.toPrimitive](hint) {
+      return hint == "string" ? this.name : this.age;
+    },
+  },
+  { age: 35, name: "Philip" },
+  { age: 44, name: "Jones" },
+];
+
+let filteredUsr = users.filter((item) => item <= 18),
+    unUsedUsr = users.filter((item) => item > 18);
+
+console.log(unUsedUsr);
+console.log(filteredUsr);
+
+
+let arr = [5, 2, 1, -10, 8];
+
+// ... your code to sort it in decreasing order
+console.log( arr ); // 8, 5, 2, 1, -10
+// arr.sort((a, b) => a - b).reverse()
