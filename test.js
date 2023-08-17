@@ -389,3 +389,14 @@ let arr = [5, 2, 1, -10, 8];
 console.log( arr ); // 8, 5, 2, 1, -10
 // arr.sort((a, b) => a - b).reverse()
 
+
+
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+console.log( unique(values) ); // Hare, Krishna, :-O
