@@ -148,9 +148,11 @@ let id = Symbol("id");
 //         return hint == "string" ? `{name: "${this.name}"}` : this.age
 //     }
 // }
-let html = document.querySelectorAll("li");
+// let html = document.querySelectorAll("li");
 
-console.log(html);
+// for(let keys of html){
+//   console.log(keys.);
+// }
 // console.log(c);
 // console.log(+c + 10)
 
@@ -386,3 +388,4 @@ let arr = [5, 2, 1, -10, 8];
 // ... your code to sort it in decreasing order
 console.log( arr ); // 8, 5, 2, 1, -10
 // arr.sort((a, b) => a - b).reverse()
+

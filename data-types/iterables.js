@@ -94,8 +94,8 @@ console.log(typeof variable);
 console.log(variable);
 
 let stringRange = {
-  from: 'a',
-  to: 'e',
+  from: "a",
+  to: "e",
 
   [Symbol.iterator]() {
     let startCharCode = this.from.charCodeAt(0);
@@ -111,9 +111,9 @@ let stringRange = {
         } else {
           return { done: true };
         }
-      }
+      },
     };
-  }
+  },
 };
 
 for (let letter of stringRange) {
@@ -126,22 +126,22 @@ for (let letter of stringRange) {
 
 let range = {
   from: 1,
-  to: 5,  // infinity ham bo'lishi mumkin
-  [Symbol.iterator](){
-    this.start = this.from
-    return this
+  to: 5, // infinity ham bo'lishi mumkin
+  [Symbol.iterator]() {
+    this.start = this.from;
+    return this;
   },
 
-  next(){
-    if(this.start <= this.to){
-      return {done: false, value: this.start++}
-    }else {
-      return {done: true}
+  next() {
+    if (this.start <= this.to) {
+      return { done: false, value: this.start++ };
+    } else {
+      return { done: true };
     }
-  }
-}
+  },
+};
 
-for(let rangers of range){
+for (let rangers of range) {
   console.log(rangers);
 }
 
@@ -153,15 +153,15 @@ for(let rangers of range){
 
 // misol uchun for...of sintaxisisi stringlarni iteratsiya qilishi mumkin:
 
-for(let characters of "test"){
+for (let characters of "test") {
   console.log(characters); // t, keyin e, keyin s, keyin t
 }
 
 // Bu simvollar bilan ham to'g'ri ishlaydi:
 
-let str = '𝒳😂';
+let str1 = "𝒳😂";
 for (let char of str) {
-    alert( char ); // 𝒳, and then 😂
+  console.log(char); // 𝒳, and then 😂
 }
 
 // buni qanday qilib aniq ishlashni keling qo'lda ko'rib chiqamiz:
@@ -170,11 +170,11 @@ let str = "Hello";
 
 let iterator = str[Symbol.iterator]();
 
-while(true){
+while (true) {
   let result = iterator.next();
 
-  if(result.done) break
-  console.log(result.value)
+  if (result.done) break;
+  console.log(result.value);
 }
 // hamma belgilarni birma bir chiqaradi
 
@@ -200,10 +200,90 @@ while(true){
 let arrarLike = {
   0: "Hello",
   1: "World",
-  length: 2
-}
+  length: 2,
+};
 
-for(let key of arrarLike){} // error no symbol iterator
-
+for (let key of arrarLike) {
+} // error no symbol iterator
+// Iterable va massivga o'xshashlar odatda massiv emas , ularda yo'q va hokazo push. popAgar bizda shunday ob'ekt bo'lsa va u bilan massiv bilan ishlashni istasak, bu juda noqulay. rangeMasalan, biz massiv usullaridan foydalangan holda ishlashni xohlaymiz . Bunga qanday erishish mumkin?
 // Bunaqa holatlar biz juda ko'p duch kelamiz ayniqsa DOM bilan ishlayotganimizda, masalan htmldan elementlarni oladigan bo'lsak bizga nodeList kabi narsalar qaytadi
 
+// let arrayLike = {
+//   0: "Hello",
+//   1: "World",
+//   length: 2
+// }
+
+// Array.from() nomli method mavjud, u orqali biz arrayga o'xshagan ob'ektlarni iteratsiya qila olamiz
+
+let arr = Array.from(arrayLike);
+
+for (let values of arr) {
+  console.log(values);
+}
+
+// Array.from satrda (*)ob'ektni oladi, uni takrorlanadigan yoki massivga o'xshashligini tekshiradi, so'ngra yangi massiv yaratadi va unga barcha elementlarni ko'chiradi.
+
+// Xuddi shu narsa takrorlanadigan uchun sodir bo'ladi:
+
+// asarr1uming that range is taken from the example above
+let arr1 = Array.from(range);
+console.log(arr1); // 1,2,3,4,5 (array toString conversion works)
+
+// Umumiy sintaxis bizga ixtiyoriy "map" lash usulini taqdim etadi:
+
+// Array.from(obj,[ mapFn, thisArg])
+
+// Ixtiyoriy ikkinchi argument mapFnmassivga qo'shishdan oldin har bir elementga qo'llaniladigan va bizga uni thisArgo'rnatishga imkon beradigan funksiya bo'lishi mumkin.this
+
+// Masalan; misol uchun:
+
+let weirdArr = Array.from(arr, (num) => num * num);
+console.log(weirdArr);
+
+// Stringlar bilan
+
+let myStr = "𝒳😂";
+
+// splits myStr into array of characters
+let chars = Array.from(myStr);
+
+console.log(chars[0]); // 𝒳
+console.log(chars[1]); // 😂
+console.log(chars.length); // 2
+
+// str.split() dan farqli o'laroq, u stringning xususiyatiga tayanadi va huddi for of ga o'xshab symbollar bilan to'g'ri ishlaydi
+
+// Texnik jihatdan bu u yerda huddi shunday qiladi:
+
+let weirdStr = "𝒳😂";
+
+let addedArr = [];
+
+for (let chars of weirdArr) {
+  addedArr.push(chars);
+}
+
+function slice(str, start, end) {
+  return Array.from(str).slice(start, end).join("");
+}
+
+let coolString = "𝒳😂𩷶";
+
+console.log(slice(coolString, 1, 3)); // 😂𩷶
+
+// the native method does not support surrogate pairs
+console.log(coolString.slice(1, 3)); // garbage (two pieces from different surrogate pairs)
+// 😂𩷶
+// ��
+
+// exercises:
+
+// for (let i of 12345) {
+//   console.log(i)
+// }
+
+// Summary:
+// for...of sintaxisini qo'llab quvvatlaydiganlar iterablellar deb ataladi.
+
+// Texnik jihatdan
