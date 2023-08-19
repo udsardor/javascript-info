@@ -1,22 +1,40 @@
+let year = prompt("Hozir nechanchi yil");
+
+if(year == 2023){
+
+console.log(`good`)
+}
+// let userName = prompt("Ismingizni yozing"),
+//   age = prompt("Yoshingiz kiriting");
+
+// let user = {
+//   userName: userName,
+//   age: age,
+// };
+// console.log(userName);
+// let li = document.querySelectorAll("li")
+// for(let brown of li){
+//     console.log(brown.textContent);
+// }
 // Ternary Operator
 
 // ? :
 
-// let products = {
+// let productsa {
 //   eats: {
-//     "bread": true,
-//     "butter": true,
-//     "roltan": false,
-//     "chocolate": true
+//     "bread":arue,
+//     "butter"atrue,
+//     "roltan"afalse,
+//     "chocolaa": true
 //   },
 //   drinks: {
-//     "cola": true,
-//     "fanta": true,
-//     "flash": false
+//     "cola": aue,
+//     "fanta":arue,
+//     "flash":aalse
 //   }
 // }
 
-// console.log(products.eats);
+// console.log(aoducts.eats);
 
 // let a = 10;
 // let i = 0;
@@ -117,7 +135,7 @@
 // console.log(a + b);
 // console.log({}) // autoconvert
 // console.log("apple" < "pineapple");
-let id = Symbol("id");
+// let id = Symbol("id");?
 
 // let a = {
 //     name: "Asal",
@@ -220,7 +238,7 @@ let id = Symbol("id");
 // operand bu operatorilarning chap va o'ng tarafidagi sonlar
 // Agar operatorning (*, /, + - ) bitta operandi bo'lsa bu unary deb ataladi.
 
-let x = 1; // number
+// let x = 1; // number
 
 x = -x;
 
@@ -377,26 +395,159 @@ let users = [
 ];
 
 let filteredUsr = users.filter((item) => item <= 18),
-    unUsedUsr = users.filter((item) => item > 18);
+  unUsedUsr = users.filter((item) => item > 18);
 
 console.log(unUsedUsr);
 console.log(filteredUsr);
 
-
 let arr = [5, 2, 1, -10, 8];
 
 // ... your code to sort it in decreasing order
-console.log( arr ); // 8, 5, 2, 1, -10
+console.log(arr); // 8, 5, 2, 1, -10
 // arr.sort((a, b) => a - b).reverse()
-
-
 
 function unique(arr) {
   return Array.from(new Set(arr));
 }
 
-let values = ["Hare", "Krishna", "Hare", "Krishna",
-  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+let values = [
+  "Hare",
+  "Krishna",
+  "Hare",
+  "Krishna",
+  "Krishna",
+  "Krishna",
+  "Hare",
+  "Hare",
+  ":-O",
 ];
 
-console.log( unique(values) ); // Hare, Krishna, :-O
+console.log(unique(values)); // Hare, Krishna, :-O
+
+// let arrCollection = [
+//   "String",
+//   100,
+//   true,
+//   999n,
+//   null,
+//   undefined,
+//   Symbol("id"),
+//   { name: "Jogn", age: 45 },
+//   ["Math", "English"],
+// ];
+console.log(arrCollection.length);
+// arrCollection[9] = new Map().set(true, "boolean");
+
+// arrCollection[arrCollection.length] = "hi"
+
+// console.log(arrCollection);
+
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//       .then(response => response.json())
+//       .then(json => console.log(json))
+
+let arrCollection = [
+  "String",
+  100,
+  true,
+  999n,
+  null,
+  undefined,
+  Symbol("id"),
+  { name: "Jogn", age: 45 },
+  ["Math", "English"],
+];
+
+// Stack data structure
+
+// arrCollection.pop();
+
+// console.log(arrCollection);
+// Array ohiridan elementlar qo'shish
+
+// arrCollection[arrCollection.length] = "Qo'shilgan element"
+
+// console.log(arrCollection);
+// Array ohiridan elementlar qo'shish
+
+// arrCollection.push({}, [], "string")
+
+// console.log(arrCollection[11]);
+
+// arrCollection.shift()
+
+// arrCollection.unshift("oldiga qo'shilgan element", 203820983)
+
+// console.log(arrCollection);
+
+// arraylarga reference - arraylar uchun linklar
+
+let arr1 = [];
+
+let arr2 = arr1;
+
+arr2[0] = "012371";
+
+console.log(arr1);
+
+// console.log([] == []);
+// console.log({} == {});
+
+console.log(arr1 == arr2);
+
+let obj = {
+  name: "hi",
+  id: 1,
+};
+
+// for(let i in obj){
+//   console.log(obj[i]);
+// }
+
+let myArr = ["Math", "History"];
+
+// for(let i = 0; i < myArr.length; i++){
+//   console.log(myArr[i].toUpperCase());
+// }
+
+// for(let key in myArr){
+//   console.log(myArr[key]);
+// }
+
+// for(let item of myArr){
+//   console.log(item.toUpperCase());
+// }
+
+// let constructorArr = new Array(100);
+// console.log(constructorArr[0]);
+
+// let matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+
+// console.log(matrix[1][1]);
+// let person = {
+//   firstName: "Jogn",
+//   age: 27,
+//   colors: {
+//     xossa: "qiymat"
+//   }
+// }
+
+// console.log(person.colors.xossa);
+
+// console.log("a" > "A");
+
+console.log(Boolean(0)); // false
+console.log(Boolean("")); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); //false
+
+// console.log(Boolean("0"));
+
+// console.log(0 !== false);
+
+// console.log(undefined === null);
+

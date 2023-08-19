@@ -1,5 +1,4 @@
 // Arrays - Massivlar
-
 // Ob'ektlar bizga keylar orqali qiymat saqlashga imkon beradi.
 
 // Lekin bizga ko'plab holatlarda tartiblangan ro'yxat kerak bo'ladi, Masalan, bizga biror narsa ro'yxatini saqlash uchun kerak: foydalanuvchilar, tovarlar, HTML elementlari va boshqalar.Bu erda ob'ektdan foydalanish qulay emas, chunki u elementlar tartibini boshqarish usullarini taqdim etmaydi. Biz yangi xususiyatni mavjudlari orasiga kirita olmaymiz. Ob'ektlar shunchaki bunday foydalanish uchun mo'ljallanmagan.
@@ -49,7 +48,7 @@ console.log(fruits); // Apple,Orange,Plum
 
 // mix of values
 let arr = ['Apple', { name: 'John' }, true, function () { console.log('hello'); }];
-
+arr[3]()
 // get the object at index 1 and then show its name
 console.log(arr[1].name); // John
 
@@ -192,10 +191,10 @@ let fruits = []; // make an array
 
 fruits[99999] = 5; // arrayni o'zini uzunligidan ham ortiqroq index berib uni property sifatida ishlatish
 
+
+console.log(fruits);
+
 fruits.age = 25; // array property sini huddi ob'ektniki kabi qo'shsak
-
-console.log(fruits.age);
-
 // Bu mumkin, chunki massivlar ularning bazasida joylashgan ob'ektlardir. Biz ularga har qanday xususiyatni qo'shishimiz mumkin.
 
 // Javascript dvigateli ko'radiki biz massivlar bilan oddiy ob'ektdek ishlayabmiz. VA bu bizga arraylardagi optimallashtirish ni va samarisini yo'qatib qo'yadi.
