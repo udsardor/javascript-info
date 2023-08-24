@@ -235,3 +235,19 @@ set.forEach((value, valueAgain, set) => {
 });
 
 // Qiziqarli narsaga e'tibor bering. Qayta qo'ng'iroq qilish funksiyasi forEach3 ta argumentga ega: a value, keyin bir xil qiymat valueAgain va keyin maqsadli ob'ekt. Darhaqiqat, bir xil qiymat argumentlarda ikki marta paydo bo'ladi.
+
+
+// let myyy = [
+//   "krishna",
+//   "krishna",
+//   "myhoney",
+//   ":-0"
+// ];
+
+// let mySet = new Set();
+
+// for(let key of myyy){
+//   Array.from(mySet.add(key))
+// }
+
+// console.log(mySet);
