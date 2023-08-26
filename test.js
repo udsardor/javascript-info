@@ -1,9 +1,12 @@
-let year = prompt("Hozir nechanchi yil");
+// let user = +prompt("10 bo'lsa konsolga 22 chiqsin")
+// if(user > 10){
+//   alert(user + 3)
+// }else if(user < 10){
+//   console.log(user * 2);
+// }else if(user == 10){
+//   alert(22)
+// }
 
-if(year == 2023){
-
-console.log(`good`)
-}
 // let userName = prompt("Ismingizni yozing"),
 //   age = prompt("Yoshingiz kiriting");
 
@@ -538,16 +541,39 @@ let myArr = ["Math", "History"];
 
 // console.log(person.colors.xossa);
 
-// console.log("a" > "A");
+// // console.log("a" > "A");
 
-console.log(Boolean(0)); // false
-console.log(Boolean("")); // false
-console.log(Boolean(null)); // false
-console.log(Boolean(undefined)); //false
+// console.log(Boolean(0)); // false
+// console.log(Boolean("")); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(undefined)); //false
 
-// console.log(Boolean("0"));
+// // console.log(Boolean("0"));
 
-// console.log(0 !== false);
+// // console.log(0 !== false);
 
-// console.log(undefined === null);
+// // console.log(undefined === null);
 
+// function camelize(str) {
+//   return str
+//     .split("-")
+//     .map((item, index) =>
+//       index == 0 ? item : item[0].toUpperCase() + item.slice(1)
+//     )
+//     .join("");
+// }
+
+// console.log(camelize("background-color"));
+// console.log(camelize("list-style-image"));
+// console.log(camelize("-webkit-transition"));
+
+// let calc1={
+
+//   calculate(str, calc) {
+//     return str+calc
+//   }
+
+// }
+// let calc = new Calculator("3"+"7");
+
+// console.log(calc1.calculate("3 + 7")); 
