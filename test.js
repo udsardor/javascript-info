@@ -1,3 +1,24 @@
+const calledInto = (confirmation, yes, no) => {
+  if(confirmation == "Yes"){
+      alert(yes())
+  }else {
+      alert(no())
+  }
+}
+
+
+let confirmation = prompt("Do you have parental confirmation?");
+
+function yes(){
+  return "You've a confirmation, so you can enter"
+}
+
+function no(){
+  return "You've no confirmation from your parents, so you cannot enter the site"
+}
+
+calledInto(confirmation, yes, no)
+
 // let user = +prompt("10 bo'lsa konsolga 22 chiqsin")
 // if(user > 10){
 //   alert(user + 3)
